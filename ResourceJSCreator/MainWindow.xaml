@@ -1,0 +1,11 @@
+﻿<Controls:Window x:Class="ResourceJSCreator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Loaded="OnLoad"  WindowStartupLocation="CenterScreen" 
+        xmlns:Controls="clr-namespace:Elysium.Controls;assembly=Elysium"
+        xmlns:params="http://schemas.codeplex.com/elysium/params"
+        Title="Resource.JS Creator" Height="350" Width="525">
+    <Grid>
+        
+    </Grid>
+</Controls:Window>
