@@ -22,8 +22,20 @@ game.Water = me.ObjectEntity.extend({
 
     update: function () {
         this.doWave();
-
-        if (!me.game.collide(this)) {
+        var res = me.game.collide(this);
+        if (res) {
+            switch (res.obj.type) {
+                case me.game.ENEMY_OBJECT: {
+                    if ((res.y > 0) && this.falling) {
+                        // jump
+                        this.vel.y -= this.maxVel.y * me.timer.tick;
+                    } else {
+                        this.hurt();
+                    }
+                    break;
+                }
+                default: break;
+            }
             this.inWater = false;
         } else {
             this.inWater = true;
@@ -38,6 +50,7 @@ game.Water = me.ObjectEntity.extend({
         }
 
         var splashParticles = 10;
+        var v = obj.vel.length();
         if (!this.inWater && obj.vel.length() > 4) {
             for (var i = 0; i < splashParticles; i++) {
                 var droplet = new game.WaterParticle(obj.pos.x + obj.width / 2, this.pos.y, new me.Vector2d(5, -obj.vel.length() / 2), new me.Vector2d(-0.5, 0.5), new me.Vector2d(0.5, 1));

@@ -32,7 +32,7 @@ var game = {
     // Run on game resources loaded.
     "loaded": function () {
         me.state.set(me.state.MENU, new game.TitleScreen());        
-        me.debug.renderHitBox = true;
+        //me.debug.renderHitBox = true;
 
         // Start the menu screen.
         me.state.change(me.state.MENU);

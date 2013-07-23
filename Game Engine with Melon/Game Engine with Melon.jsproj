@@ -107,6 +107,7 @@
     <Content Include="js\entities\entities.js" />
     <Content Include="js\game.js" />
     <Content Include="js\resources.js" />
+    <Content Include="js\screens\base\screens.js" />
     <Content Include="js\screens\play.js" />
     <None Include="Game Engine with Melon_TemporaryKey.pfx" />
   </ItemGroup>
