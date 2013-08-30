@@ -42,6 +42,7 @@ game.FireEmitter = game.ParticleEmitter.extend({
     },
 
     draw: function (context) {
+        context.save();
         var grd = context.createRadialGradient(this.pos.x + this.width / 2, this.pos.y + this.height / 2, 5, this.pos.x + this.width / 2, this.pos.y + this.height / 2, this.getRandom(0.9, 1) * 90);
         var intensity = this.getRandom(0.8, 1) * 0.5;
         grd.addColorStop(0, "rgba(237,146,0," + intensity + ")");
@@ -51,6 +52,7 @@ game.FireEmitter = game.ParticleEmitter.extend({
         context.arc(this.pos.x, this.pos.y, 100, 0, 2 * Math.PI, false);
         context.fillStyle = grd;
         context.fill();
+        context.restore();
         this.parent(context);
     },
 });
@@ -119,11 +121,13 @@ game.VectorCircleParticle = game.Particle.extend({
     },
 
     draw: function (context) {
+        context.save();
         var rgbColour = this.hexToRgb(this.colour);
         context.beginPath();
         context.arc(this.pos.x, this.pos.y, this.radius, 0, 2 * Math.PI, false);
         context.fillStyle = 'rgba(' + rgbColour + "," + this.alpha + ")";
         context.fill();
+        context.restore();
     },
 });
 

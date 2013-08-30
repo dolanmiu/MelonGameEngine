@@ -4,10 +4,9 @@
 /*		a player entity																*/
 /*																					*/
 /************************************************************************************/
-game.PlayerEntity = me.ObjectEntity.extend({
+game.PlatformPlayerEntity = me.ObjectEntity.extend({
 
     init: function (x, y, settings) {
-        settings.image = "playerSprite";
         this.maxLives = settings.maxLives;
         this.currentLives = this.maxLives;
         // call the constructor
@@ -21,21 +20,21 @@ game.PlayerEntity = me.ObjectEntity.extend({
         this.alwaysUpdate = true;
         this.canBreakTile = true;
         this.anchorPoint.set(0.5, 1.0);
+        this.type = "mainPlayer";
     },
 
     update: function () {
         me.game.HUD.setItemValue("lives", this.currentLives);
-        //me.game.viewport.move(this.pos.x, this.pos.y);
         if (me.input.isKeyPressed('left')) {
             // flip the sprite on horizontal axis
             this.flipX(true);
             // update the entity velocity
-            this.vel.x -= this.accel.x * me.timer.tick;
+            this.vel.x -= this.accel.x * me.timer.tick * 35 / me.sys.fps;
         } else if (me.input.isKeyPressed('right')) {
             // unflip the sprite
             this.flipX(false);
             // update the entity velocity
-            this.vel.x += this.accel.x * me.timer.tick;
+            this.vel.x += this.accel.x * me.timer.tick * 35 / me.sys.fps;
         } else {
             this.vel.x = 0;
         }
@@ -91,15 +90,11 @@ game.PlayerEntity = me.ObjectEntity.extend({
                 default: break;
             }
         }
-
         // update animation if necessary
         if (this.vel.x != 0 || this.vel.y != 0 || (this.renderable && this.renderable.isFlickering())) {
             this.parent();
             return true;
         }
-
-        // else inform the engine we did not perform
-        // any update (e.g. position, animation)
         return false;
     },
 
@@ -119,7 +114,6 @@ game.PlayerEntity = me.ObjectEntity.extend({
             }
         }
     }
-
 });
 
 /**
@@ -312,7 +306,7 @@ game.ExclaimBox = me.ObjectEntity.extend({
     init: function (x, y, settings) {
         this.parent(x, y, settings);
         this.collisionBox = new me.Rect(new me.Vector2d(x, y), settings.width, settings.height);
-        this.updateColRect(-1, settings.width + 10, 0, settings.height + 10);
+        this.updateColRect(-1, settings.width + 10, 0, settings.height + 20);
         //var collisionLayer = me.game.currentLevel.getLayerByName("collision");
         //var id = collisionLayer.getTileId(5, 5);
         //collisionLayer.setTile(x / collisionLayer.tilewidth, y / collisionLayer.tileheight, 1);
@@ -439,40 +433,3 @@ game.FloatingFinish = game.FinishLine.extend({
         this.bounceDownTween.start();
     }
 });
-
-/**
- * not part of this class
- */
-/*game.LevelSelectorWidget = me.GUI_Object.extend({
-    init: function (x, y, settings) {
-        settings.image = "coin";
-        settings.spritewidth = 35;
-        settings.spriteheight = 35;
-        this.levels = settings.levels.split(" ");
-        this.currentLevel = this.levels[0];
-        this.font = new me.BitmapFont("atascii", { x: 24 });
-
-        this.levelButtons = [];
-        for (var i = 0; i < this.levels.length; i++) {
-            this.levelButtons[i] = new game.LevelButton(x, y);
-            me.game.add((this.levelButtons[i]));
-        }
-        // parent constructor
-        this.parent(x, y, settings);
-    },
-
-    onClick: function () {
-        
-        // don't propagate the event
-        return true;
-    },
-
-    draw: function (context, x, y) {
-        //this.font.draw(context, this.currentLevel + "fdgs", window.screen.width / 5, window.screen.height / 4);
-        for (var i = 0; i < this.levels.length; i++) {
-            this.font.draw(context, this.levels[i], this.pos.x + (i * 30), this.pos.y);
-        }
-        this.parent(context, x, y);
-    },
-
-});*/

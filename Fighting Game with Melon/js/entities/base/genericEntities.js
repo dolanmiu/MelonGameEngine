@@ -6,28 +6,33 @@
         this.type = "mainPlayer";
         this.parent(x, y, settings);
         this.bindedKeys = [];
-        this.bindKey("left", "left");
-        this.bindKey("right", "right");
         me.game.playerPos = new me.Vector2d(0, 0);
     },
 
-    bindKey: function (keyString, referance) {
+    bindKey: function (keyString, referance, lock) {
         var upperKey = keyString.toUpperCase();
         var key = eval("me.input.KEY." + upperKey);
-        me.input.bindKey(key, referance);
+        me.input.bindKey(key, referance + this.GUID, lock);
         this.bindedKeys.push(key);
+    },
+
+    checkKeyPressed: function (keyReferance) {
+        if (me.input.isKeyPressed(keyReferance + this.GUID)) {
+            return true;
+        }
+        return false;
     },
 
     update: function () {
         // update animation if necessary
         this.updateMovement();
-        me.game.playerPos.x = this.pos.x + this.width / 2;
-        me.game.playerPos.y = this.pos.y + this.height / 2;
+        //me.game.playerPos.x = this.pos.x + this.width / 2;
+        //me.game.playerPos.y = this.pos.y + this.height / 2;
+
         if (this.vel.x != 0 || this.vel.y != 0 || (this.renderable && this.renderable.isFlickering())) {
             this.parent();
             return true;
         }
-        this.parent();
     },
 
     onDestroyEvent: function () {
@@ -35,7 +40,6 @@
             me.input.unbindKey(this.bindedKeys[i]);
         }
     },
-
 });
 
 game.GameManager = me.ObjectEntity.extend({
@@ -52,12 +56,21 @@ game.GameManager = me.ObjectEntity.extend({
         if (settings.smoothCam) {
             //me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
         }
+
+        if (settings.followmultipleEntities) {
+
+        }
     },
 
     update: function () {
         //me.game.viewport.move(me.game.playerPos.x, me.game.playerPos.y);
         this.parent();
-    }
+        return true;
+    },
+
+    draw: function (context) {
+
+    },
 });
 
 BinaryHeap = Object.extend({

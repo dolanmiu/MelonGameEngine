@@ -22,7 +22,6 @@ game.resources = [
 	{ name: "slimeWalk", type: "image", src: "assets/img/enemies/slimeWalk.png" },
 	{ name: "levelSelectMap", type: "tmx", src: "assets/map/levelSelectMap.tmx" },
 	{ name: "map1", type: "tmx", src: "assets/map/map1.tmx" },
-	{ name: "map2", type: "tmx", src: "assets/map/map2.tmx" },
 	{ name: "menuMap", type: "tmx", src: "assets/map/menuMap.tmx" },
 	{ name: "settingsMap", type: "tmx", src: "assets/map/settingsMap.tmx" },
 	{ name: "cling", type: "audio", src: "assets/sfx/", channel: 1 },
@@ -55,8 +54,18 @@ game.loadEntities = function() {
 	me.entityPool.add("Sparks", game.Sparks);
 	me.entityPool.add("FireParticle", game.FireParticle);
 	me.entityPool.add("PlatformPlayerEntity", game.PlatformPlayerEntity);
+	me.entityPool.add("TopDownPlayerEntity", game.TopDownPlayerEntity);
 	me.entityPool.add("CoinEntity", game.CoinEntity);
+	me.entityPool.add("GameManager", game.GameManager);
 	me.entityPool.add("PathEnemyEntity", game.PathEnemyEntity);
+	me.entityPool.add("AStarPath", game.AStarPath);
+	me.entityPool.add("TopDownEnemy", game.TopDownEnemy);
+	me.entityPool.add("MiniMap", game.MiniMap);
+	me.entityPool.add("DynamicLight", game.DynamicLight);
+	me.entityPool.add("PauseMenu", game.PauseMenu);
+	me.entityPool.add("DarkMask", game.DarkMask);
+
+
 	me.entityPool.add("PathEnemyWaitEntity", game.PathEnemyWaitEntity);
 	me.entityPool.add("FlyEnemyEntity", game.FlyEnemyEntity);
 	me.entityPool.add("FlyEnemyWaitEntity", game.FlyEnemyWaitEntity);

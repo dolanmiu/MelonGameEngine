@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace ResourceJSCreator
+namespace MelonJSHelper
 {
     public class EntityJSFile : BaseFile
     {

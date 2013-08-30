@@ -263,6 +263,7 @@ game.HUDItem = me.ObjectEntity.extend({
         if (!me.game.HUD) {
             me.game.addHUD(0, 0, game.screenWidth, game.screenHeight);
         }
+        this.alwaysUpdate = true;
         this.parent(x, y, settings);
     },
 });
@@ -270,8 +271,6 @@ game.HUDItem = me.ObjectEntity.extend({
 game.MiniMap = game.HUDItem.extend({
     init: function (x, y, settings) {
         this.parent(x, y, settings);
-        this.alwaysUpdate = true;
-
         var dimensionsRect = new me.Rect(new me.Vector2d(x, y), settings.width, settings.height);
         var entitesToTrack;
         if (settings.trackedentities) {
@@ -300,25 +299,38 @@ game.MiniMap = game.HUDItem.extend({
             var dimensionsRect = new me.Rect(new me.Vector2d(dimensions[0], dimensions[1]), dimensions[2], dimensions[3]);
             var focusedEntity = mapAttributes[2].trim();
             me.game.HUD.addItem("map", new game.MiniMapHUD(dimensionsRect, entitesToTrack, focusedEntity));
-        }
-
-        if (settings.score) {
-            me.game.HUD.addItem("score", new game.ScoreObject(200, 10));
-
-        }
-
-        if (settings.lives) {
-            me.game.HUD.addItem("lives", new game.LifeObject(0, 10));
         }*/
     },
 
     update: function () {
         me.game.HUD.updateItemValue("map", 0);
     },
+});
 
-    addEntity: function (entity) {
-        this.miniMapHUD.entities.push(entity);
-    }
+game.LivesCounter = game.HUDItem.extend({
+    init: function (x, y, settings) {
+        this.parent(x, y, settings);
+        this.livesHUD = new new game.LifeObject(x, y);
+        me.game.HUD.addItem("lives", this.livesHUD);
+    },
+
+
+    update: function () {
+        //me.game.HUD.updateItemValue("lives", this.value);
+    },
+});
+
+game.ScoreCounter = game.HUDItem.extend({
+    init: function (x, y, settings) {
+        this.parent(x, y, settings);
+        this.scoreHUD = new game.ScoreObject(200, 10);
+        me.game.HUD.addItem("score", this.scoreHUD);
+    },
+
+
+    update: function () {
+        //me.game.HUD.updateItemValue("score", this.value);
+    },
 });
 
 game.PauseMenu = game.HUDItem.extend({
@@ -326,7 +338,7 @@ game.PauseMenu = game.HUDItem.extend({
     init: function (x, y, settings) {
         this.parent(x, y, settings);
         this.pauseGUI = new game.PauseGUI();
-        me.game.HUD.addItem("pause", this.pauseGUI);
+        //me.game.HUD.addItem("pause", this.pauseGUI);
         me.input.bindKey(me.input.KEY.ESC, "pause", true);
     },
 
@@ -342,7 +354,7 @@ game.PauseMenu = game.HUDItem.extend({
                 }
             }, 100);
         }
-        return true;
+        this.parent();
     },
 
     draw: function (context) {
@@ -414,7 +426,6 @@ game.MiniMapHUD = me.HUD_Item.extend({
             }
         }
         context.restore();
-        this.parent(context);
     },
 
     drawVisionCone: function (context, x, y, a, colour) {
@@ -429,6 +440,97 @@ game.MiniMapHUD = me.HUD_Item.extend({
         context.fill();
     },
 });
+
+game.ScrollingText = me.ObjectEntity.extend({
+
+    init: function (x, y, settings) {
+        var font = "atascii";
+        if (settings.font) {
+            font = settings.font;
+        }
+        this.scrollerfont = new me.BitmapFont(font, { x: 24 });
+        this.scrollertween = null;
+        if (settings.text) {
+            this.text = settings.text;
+        } else {
+            this.text = "ADD SOME TEXT TO THE TEXT PROPERTY!      "
+        }
+        this.scrollerpos = game.screenWidth;
+
+        this.scrollertween = new me.Tween(this).to({ scrollerpos: -2200 }, 10000).onComplete(this.scrollover.bind(this)).start();
+        this.parent(x, y, settings);
+    },
+
+    scrollover: function () {
+        this.scrollerpos = game.screenWidth;
+        this.scrollertween.to({
+            scrollerpos: -2200
+        }, 10000).onComplete(this.scrollover.bind(this)).start();
+    },
+
+    draw: function (context) {
+        this.scrollerfont.draw(context, this.text, this.scrollerpos, this.pos.y);
+    },
+
+    onDestroyEvent: function () {
+        this.scrollertween.stop();
+    }
+});
+
+game.TextBlock = me.ObjectEntity.extend({
+
+    init: function (x, y, settings) {
+        this.text = settings.text;
+        var font = "atascii";
+        if (settings.font) {
+            font = settings.font;
+        }
+        this.font = new me.BitmapFont(font, { x: 24 });
+
+        this.text = "GAME OVER";
+        if (settings.text) {
+            this.text = settings.text;
+        }
+
+        this.fontPosX = x;
+        this.fontPosY = y;
+        if (settings.centrex == true) {
+            this.centreX = true;
+        }
+
+        if (settings.centrey == true) {
+            this.centreY = true;
+        }
+
+        this.parent(x, y, settings);
+    },
+
+    draw: function (context) {
+        var size = this.font.measureText(context, this.text);
+        if (this.centreX) {
+            this.fontPosX = game.screenWidth / 2 - (size.width / 2);
+        }
+
+        if (this.centreY) {
+            this.fontPosY = game.screenHeight / 2 - (size.height / 2);
+        }
+
+        this.font.draw(context, this.text, this.fontPosX, this.fontPosY);
+    }
+});
+
+game.FullScreenColour = me.ObjectEntity.extend({
+
+    init: function (x, y, settings) {
+        this.colour = settings.colour;
+    },
+
+    draw: function (context) {
+        me.video.clearSurface(context, this.colour);
+    }
+});
+
+//game.ScrollingText = 
 
 /**
  * not part of this class

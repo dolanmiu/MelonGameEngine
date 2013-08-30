@@ -65,6 +65,7 @@ game.loadEntities = function() {
 	me.entityPool.add("PauseMenu", game.PauseMenu);
 	me.entityPool.add("DarkMask", game.DarkMask);
 
+	me.entityPool.add("FighterPawn", game.FighterPawn);
 
 	me.entityPool.add("PathEnemyWaitEntity", game.PathEnemyWaitEntity);
 	me.entityPool.add("FlyEnemyEntity", game.FlyEnemyEntity);
@@ -74,4 +75,6 @@ game.loadEntities = function() {
 	me.entityPool.add("FloatingFinish", game.FloatingFinish);
 	me.entityPool.add("LevelSelectorWidget", game.LevelSelectorWidget);
 	me.entityPool.add("Water", game.Water);
+	me.entityPool.add("ScrollingText", game.ScrollingText);
+	me.entityPool.add("TextBlock", game.TextBlock);
 }

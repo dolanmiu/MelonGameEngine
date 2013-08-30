@@ -247,6 +247,5 @@ game.DarkMask = me.ObjectEntity.extend({
 
     draw: function (context) {
         me.game.DarkMask.render(context);
-        this.parent(context);
     },
 });

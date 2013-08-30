@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ResourceJSCreator
+namespace MelonJSHelper
 {
     /// <summary>
     /// Interaction logic for StateManager.xaml
@@ -118,7 +118,7 @@ namespace ResourceJSCreator
 
         private void SaveLevelButton_Click(object sender, RoutedEventArgs e)
         {
-            string[] output = Settings.ScreensFile.CreateScreensJSFile();
+            string[] output = Settings.ScreensFile.CreateJSFile();
             File.WriteAllLines(Settings.ScreenFileDirectory, output);
         }
 

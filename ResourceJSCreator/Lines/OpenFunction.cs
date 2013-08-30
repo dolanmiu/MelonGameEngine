@@ -1,5 +1,5 @@
 ﻿
-namespace ResourceJSCreator
+namespace MelonJSHelper
 {
     class OpenFunction : ILine
     {
@@ -29,6 +29,14 @@ namespace ResourceJSCreator
             get
             {
                 return body;
+            }
+        }
+
+        public string[] Arguments
+        {
+            get
+            {
+                return arguments;
             }
         }
         #endregion

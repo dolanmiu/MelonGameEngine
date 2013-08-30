@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ResourceJSCreator
+namespace MelonJSHelper
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -21,6 +21,10 @@ namespace ResourceJSCreator
     public partial class MainWindow : Elysium.Controls.Window
     {
         CreateResource createJS = new CreateResource();
+        ScreenManager stateManager = new ScreenManager();
+        EntityCreator entityCreator = new EntityCreator();
+        PluginsCreator pluginsCreator = new PluginsCreator();
+        Settings settings = new Settings();
 
         public MainWindow()
         {
@@ -29,7 +33,12 @@ namespace ResourceJSCreator
 
         private void OnLoad(object sender, RoutedEventArgs e)
         {
-            this.Content = createJS;
+            //this.Content = createJS;
+            resourcePage.Content = createJS;
+            stateManagerPage.Content = stateManager;
+            settingsPage.Content = settings;
+            entityCreatorPage.Content = entityCreator;
+            pluginManagerPage.Content = pluginsCreator;
         }
     }
 }

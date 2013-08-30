@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace ResourceJSCreator
+namespace MelonJSHelper
 {
     public class ScreensFile : MelonJSFile
     {
@@ -103,7 +103,7 @@ namespace ResourceJSCreator
             return i;
         }
 
-        public string[] CreateScreensJSFile()
+        public string[] CreateJSFile()
         {
             List<string> fileStrings = new List<string>();
             foreach (Screen screen in screens)

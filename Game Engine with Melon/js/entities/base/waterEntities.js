@@ -7,17 +7,17 @@ game.Water = me.ObjectEntity.extend({
         this.Dampening = 0.025;
         this.Tension = 0.025;
         this.Spread = 0.25;
-        this.WaveHeightStart = 100;
+        this.WaveHeightStart = 0;
         this.type = me.game.WATER;
-        //this.amountofColumns = Math.round(this.width / 1.75);
-        this.amountofColumns = 80;
+        this.amountofColumns = Math.round(this.width / 9);
+
         for (var i = 0; i < this.amountofColumns; i++) {
             this.columns[i] = new this.column();
             this.columns[i].Height = this.WaveHeightStart;
             this.columns[i].TargetHeight = this.WaveHeightStart;
             this.columns[i].Speed = 0;
         }
-        this.splash(40, 10);
+        //this.splash(40, 10);
     },
 
     update: function () {
@@ -25,21 +25,23 @@ game.Water = me.ObjectEntity.extend({
         var res = me.game.collide(this);
         if (res) {
             switch (res.obj.type) {
-                case me.game.ENEMY_OBJECT: {
-                    if ((res.y > 0) && this.falling) {
-                        // jump
-                        this.vel.y -= this.maxVel.y * me.timer.tick;
-                    } else {
-                        this.hurt();
-                    }
+                case "mainPlayer": {
+                    this.inWater = true;
                     break;
                 }
-                default: break;
+                default: {
+                    break;
+                }
             }
-            this.inWater = false;
+            
         } else {
-            this.inWater = true;
+            this.inWater = false;
         }
+        /*if (res) {
+            if (res.obj.type == "mainPlayer") {
+                this.inWater = true;
+            } 
+        }*/
     },
 
     onCollision: function (res, obj) {
@@ -51,7 +53,7 @@ game.Water = me.ObjectEntity.extend({
 
         var splashParticles = 10;
         var v = obj.vel.length();
-        if (!this.inWater && obj.vel.length() > 4) {
+        if (!this.inWater && obj.vel.length() > 4 && obj.type == "mainPlayer") {
             for (var i = 0; i < splashParticles; i++) {
                 var droplet = new game.WaterParticle(obj.pos.x + obj.width / 2, this.pos.y, new me.Vector2d(5, -obj.vel.length() / 2), new me.Vector2d(-0.5, 0.5), new me.Vector2d(0.5, 1));
                 me.game.add(droplet, this.z);
@@ -67,7 +69,7 @@ game.Water = me.ObjectEntity.extend({
 
     splash: function (index, speed) {
         if (index >= 0 && index < this.columns.length) {
-            this.columns[index].Speed = speed;
+            this.columns[index].Speed = speed / 2;
         }
     },
 
@@ -81,7 +83,7 @@ game.Water = me.ObjectEntity.extend({
         var leftDeltas = new Array(this.columns.length);
         var rightDeltas = new Array(this.columns.length);
 
-        for (var j = 0; j < 8; j++) {
+        for (var j = 0; j < 1; j++) {
             for (i = 0; i < this.columns.length; i++) {
                 if (i > 0) {
                     leftDeltas[i] = this.Spread * (this.columns[i].Height - this.columns[i - 1].Height);
@@ -104,28 +106,26 @@ game.Water = me.ObjectEntity.extend({
         }
     },
 
-    drawWave: function (ctx, offset) {
-        if (ctx) {
-            var context = ctx;
-            //context.clearRect(0, 0, context.width, context.height);
+    drawWave: function (context, offset) {
+        if (context) {
             //context.lineWidth = 4;
 
-            var lingrad = context.createLinearGradient(this.pos.x, this.pos.y, this.pos.x, this.pos.y + 100);
-            lingrad.addColorStop(0, '#499589');
-            lingrad.addColorStop(1, '#000000');
-            context.globalAlpha = 0.7;
+            var lingrad = context.createLinearGradient(this.pos.x, this.pos.y, this.pos.x, this.pos.y + this.height * 1.2);
+            lingrad.addColorStop(0, 'rgba(73, 149, 137, 0.7)');
+            lingrad.addColorStop(1, 'rgba(0, 0, 0, 0.7)');
+            //context.globalAlpha = 0.7;
             context.fillStyle = lingrad;
-            context.strokeStyle = '#979f9f';
+            //context.strokeStyle = '#979f9f';
 
             context.beginPath();
             context.moveTo(this.pos.x, this.pos.y + offset);
             for (var i = 0; i < this.columns.length; i++) {
-                context.lineTo(this.pos.x + i * (this.width / 80), this.columns[i].Height + this.pos.y - 100 + offset);
+                context.lineTo(this.pos.x + i * (this.width / this.amountofColumns), this.columns[i].Height + this.pos.y + offset);
             }
+            context.lineTo(this.pos.x + this.width, this.columns[this.columns.length - 1].Height + this.pos.y + offset);
             context.lineTo(this.pos.x + this.width, this.pos.y + this.height);
             context.lineTo(this.pos.x, this.pos.y + this.height);
-            //context.lineTo(this.pos.x, this.columns[this.columns.length - 1].Height + offset);
-            context.stroke();
+            //context.stroke();
             context.fill();
         }
     },
@@ -157,18 +157,7 @@ game.Water = me.ObjectEntity.extend({
             this.Height += this.Speed;
         }
     }
-
 });
-
-// shim layer with setTimeout fallback
-window.requestAnimFrame = (function () {
-    return window.requestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        function (callback) {
-            window.setTimeout(callback, 1000 / 60);
-        };
-})();
 
 
 

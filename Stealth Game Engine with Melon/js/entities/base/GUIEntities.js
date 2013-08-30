@@ -11,7 +11,7 @@
         this.centreY = settings.centreY
     },
 
-    move: function() {
+    move: function () {
         var v = d;
     },
 
@@ -56,10 +56,19 @@ game.BackgroundImage = game.Sprite.extend({
         this.parent(x, y, settings);
         var scaleFactor;
         if (this.image.width > this.image.height) {
-            scaleFactor = game.screenWidth / this.image.width;
+            scaleFactor = game.screenHeight / this.image.height;
         } else {
-            scaleFactor = game.screenWidth / this.image.height;
+            scaleFactor = game.screenWidth / this.image.width;
         }
+
+        if (scaleFactor * this.image.width < game.screenWidth) {
+            scaleFactor = game.screenWidth / this.image.width;
+        }
+
+        if (scaleFactor * this.image.height < game.screenHeight) {
+            scaleFactor = game.screenHeight / this.image.height;
+        }
+
         this.pos.x = (game.screenWidth / 2) - (this.image.width / 2);
         this.pos.y = (game.screenHeight / 2) - (this.image.height / 2);
         this.resize(scaleFactor);
@@ -180,8 +189,7 @@ game.LifeObject = me.HUD_Item.extend({
         this.parent(x, y);
         this.font = new me.BitmapFont("lifeHeart", { x: 99 });
         this.font.set("left", 0.7);
-        //this.lifeHeart = new me.SpriteObject(x, y, me.loader.getImage("lifeHeart"));
-        //this.lifeHeart.resize((game.screenWidth / 20) / this.lifeHeart.width);
+
     },
 
     /**
@@ -193,7 +201,6 @@ game.LifeObject = me.HUD_Item.extend({
             text += "!";
         }
         context.globalAlpha = 1;
-        //this.lifeHeart.draw(context);
         this.font.draw(context, text, this.pos.x, this.pos.y);
     }
 });
@@ -248,6 +255,179 @@ game.LevelFinishGUI = me.HUD_Item.extend({
         this.backButton.draw(context);
         this.font.draw(context, text, coords.x - (size.width / 2), coords.y - (size.height / 2));
     }
+});
+
+game.HUDItem = me.ObjectEntity.extend({
+
+    init: function (x, y, settings) {
+        if (!me.game.HUD) {
+            me.game.addHUD(0, 0, game.screenWidth, game.screenHeight);
+        }
+        this.parent(x, y, settings);
+    },
+});
+
+game.MiniMap = game.HUDItem.extend({
+    init: function (x, y, settings) {
+        this.parent(x, y, settings);
+        this.alwaysUpdate = true;
+
+        var dimensionsRect = new me.Rect(new me.Vector2d(x, y), settings.width, settings.height);
+        var entitesToTrack;
+        if (settings.trackedentities) {
+            entitesToTrack = settings.trackedentities.split(',');
+        }
+        for (var i = 0; i < entitesToTrack.length; i++) {
+            entitesToTrack[i] = entitesToTrack[i].trim();
+        }
+
+        var focusedEntity = settings.focusedentity.trim();
+        this.miniMapHUD = new game.MiniMapHUD(dimensionsRect, entitesToTrack, focusedEntity);
+        me.game.HUD.addItem("map", this.miniMapHUD);
+
+        /*if (settings.minimap) {
+            var mapAttributes = settings.minimap.trim().split(':');
+            var dimensions = mapAttributes[0].split(',');
+            for (var i = 0; i < dimensions.length; i++) {
+                dimensions[i] = +dimensions[i];
+            }
+
+            var entitesToTrack = mapAttributes[1].split(',');
+            for (var i = 0; i < entitesToTrack.length; i++) {
+                entitesToTrack[i] = entitesToTrack[i].trim();
+            }
+
+            var dimensionsRect = new me.Rect(new me.Vector2d(dimensions[0], dimensions[1]), dimensions[2], dimensions[3]);
+            var focusedEntity = mapAttributes[2].trim();
+            me.game.HUD.addItem("map", new game.MiniMapHUD(dimensionsRect, entitesToTrack, focusedEntity));
+        }
+
+        if (settings.score) {
+            me.game.HUD.addItem("score", new game.ScoreObject(200, 10));
+
+        }
+
+        if (settings.lives) {
+            me.game.HUD.addItem("lives", new game.LifeObject(0, 10));
+        }*/
+    },
+
+    update: function () {
+        me.game.HUD.updateItemValue("map", 0);
+    },
+
+    addEntity: function (entity) {
+        this.miniMapHUD.entities.push(entity);
+    }
+});
+
+game.PauseMenu = game.HUDItem.extend({
+
+    init: function (x, y, settings) {
+        this.parent(x, y, settings);
+        this.pauseGUI = new game.PauseGUI();
+        me.game.HUD.addItem("pause", this.pauseGUI);
+        me.input.bindKey(me.input.KEY.ESC, "pause", true);
+    },
+
+    update: function () {
+        this.paused = false;
+        if (me.input.isKeyPressed('pause')) {
+            me.state.pause();
+            this.paused = true;
+            var resume_loop = setInterval(function check_resume() {
+                if (me.input.isKeyPressed('pause')) {
+                    clearInterval(resume_loop);
+                    me.state.resume();
+                }
+            }, 100);
+        }
+        return true;
+    },
+
+    draw: function (context) {
+        if (this.paused) {
+            this.pauseGUI.show(context);
+            //var background = me.video.applyRGBFilter(me.video.getScreenCanvas(), "b&w");
+            //context.drawImage(background.canvas, 0, 0);
+            // Render the main frameBuffer
+            me.video.blitSurface();
+        }
+    },
+
+    onDestroyEvent: function () {
+        me.input.unbindKey(me.input.KEY.ESC);
+    }
+});
+
+game.MiniMapHUD = me.HUD_Item.extend({
+
+    init: function (rect, entitiesTracked, focusedEntity) {
+        this.focusedEntity = me.game.getEntityByName(focusedEntity)[0];
+        this.rect = rect;
+        this.centrePoint = new me.Vector2d((this.rect.left + this.rect.right) / 2, (this.rect.top + this.rect.bottom) / 2);
+
+        this.entities = [];
+        /*for (var i = 0; i < entitiesTracked.length; i++) {
+            this.entities = this.entities.concat(me.game.getEntityByName(entitiesTracked[i]));
+        }*/
+
+        for (var i = 0; i < this.entities.length; i++) {
+            if (this.entities[i].name == focusedEntity.toLowerCase()) {
+                this.entities.splice(i, 1);
+            }
+        }
+        this.collisionLayer = me.game.currentLevel.getLayerByName("collision").layerData;
+        this.parent(rect.left, rect.top);
+    },
+
+    draw: function (context) {
+        context.save();
+        context.beginPath();
+        context.rect(this.pos.x, this.pos.y, this.rect.width, this.rect.height);
+        context.clip();
+        context.fillStyle = "rgba(0, 0, 0, 0.5)";
+        context.fillRect(this.pos.x, this.pos.y, this.rect.width, this.rect.height);
+
+        var xOffset = this.centrePoint.x - (this.focusedEntity.pos.x / me.game.currentLevel.tilewidth);
+        var yOffset = this.centrePoint.y - (this.focusedEntity.pos.y / me.game.currentLevel.tileheight);
+
+        context.fillStyle = "#FFFFFF";
+        context.fillRect(this.focusedEntity.pos.x / me.game.currentLevel.tilewidth + xOffset, this.focusedEntity.pos.y / me.game.currentLevel.tileheight + yOffset, 1, 1);
+
+        for (var j = 0; j < this.entities.length; j++) {
+            var x = this.entities[j].pos.x / me.game.currentLevel.tilewidth + xOffset;
+            var y = this.entities[j].pos.y / me.game.currentLevel.tileheight + yOffset;
+            context.fillStyle = "#FFF000";
+            context.fillRect(x, y, 1, 1);
+            if (this.entities[j].faceDirection) {
+                this.drawVisionCone(context, x, y, this.entities[j].faceDirection, this.entities[j].state.colour);
+            }
+        }
+
+        for (var i = 0; i < this.collisionLayer.length; i++) {
+            for (var j = 0; j < this.collisionLayer[i].length; j++) {
+                if (this.collisionLayer[i][j] != null) {
+                    context.fillStyle = "#FFF000";
+                    context.fillRect(i + xOffset, j + yOffset, 1, 1);
+                }
+            }
+        }
+        context.restore();
+        this.parent(context);
+    },
+
+    drawVisionCone: function (context, x, y, a, colour) {
+        var grd = context.createRadialGradient(x, y, 0, x, y, 80);
+        grd.addColorStop(0, "rgba(" + colour + ",0.6)");
+        grd.addColorStop(1, "rgba(" + colour + ",0)");
+        context.beginPath();
+        context.arc(x, y, 70, a - 1, a + 1, false);
+        context.lineTo(x, y);
+        context.closePath();
+        context.fillStyle = grd;
+        context.fill();
+    },
 });
 
 /**

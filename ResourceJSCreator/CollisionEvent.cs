@@ -4,9 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ResourceJSCreator
+namespace MelonJSHelper
 {
     class CollisionEvent
     {
+
+        public CollisionEvent(string objectType, string actions)
+        {
+
+        }
     }
 }

@@ -53,35 +53,31 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="assets\bgm\dst-gameforest.mp3" />
     <Content Include="assets\bgm\forestMusic.mp3" />
     <Content Include="assets\bgm\titleMusic.mp3" />
-    <Content Include="assets\img\atascii_24px.png" />
+    <Content Include="assets\img\atascii.png" />
     <Content Include="assets\img\background.png" />
-    <Content Include="assets\img\block_fresh.png" />
-    <Content Include="assets\img\block_used.png" />
     <Content Include="assets\img\coin.png" />
     <Content Include="assets\img\enemies\flyEnemy.png" />
     <Content Include="assets\img\enemies\fly_dead.png" />
-    <Content Include="assets\img\enemies\fly_fly.png" />
-    <Content Include="assets\img\enemies\fly_normal.png" />
-    <Content Include="assets\img\enemies\slime_dead.png" />
-    <Content Include="assets\img\enemies\slime_normal.png" />
-    <Content Include="assets\img\enemies\slime_walk.png" />
+    <Content Include="assets\img\enemies\flyFly.png" />
+    <Content Include="assets\img\enemies\flyNormal.png" />
+    <Content Include="assets\img\enemies\slimeDead.png" />
+    <Content Include="assets\img\enemies\slimeNormal.png" />
+    <Content Include="assets\img\enemies\slimeWalk.png" />
     <Content Include="assets\img\finishStar.png" />
     <Content Include="assets\img\lifeHeart.png" />
     <Content Include="assets\img\mainScreenLogo.png" />
     <Content Include="assets\img\menuBackground.jpg" />
     <Content Include="assets\img\metatiles35x35.png" />
     <Content Include="assets\img\pback.png" />
-    <Content Include="assets\img\player.png" />
-    <Content Include="assets\img\exclaimBlock.png" />
+    <Content Include="assets\img\playerSprite.png" />
+    <Content Include="assets\img\exclaimBox.png" />
     <Content Include="assets\img\tileset.png" />
     <Content Include="assets\map\levelSelectMap.tmx" />
     <Content Include="assets\map\map1.tmx">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="assets\map\map12.json" />
     <Content Include="assets\map\map2.tmx" />
     <Content Include="assets\map\menuMap.tmx" />
     <Content Include="assets\map\settingsMap.tmx" />
@@ -90,6 +86,7 @@
     <Content Include="assets\sfx\enemykill.mp3" />
     <Content Include="assets\sfx\jump.mp3" />
     <Content Include="default.html" />
+    <Content Include="images\default.html" />
     <Content Include="images\logo.png" />
     <Content Include="images\smalllogo.png" />
     <Content Include="images\splashscreen.png" />

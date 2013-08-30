@@ -4,7 +4,7 @@
     de.objectHelper = Object.extend({
 
         addObject: function (gameName, object) {
-            me.entityPool.add(gameName, object);
+            //me.entityPool.add(gameName, object);
         },
     })
 })(window);

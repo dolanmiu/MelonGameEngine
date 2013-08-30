@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ResourceJSCreator
+namespace MelonJSHelper
 {
     /// <summary>
     /// Interaction logic for ObjectCreator.xaml

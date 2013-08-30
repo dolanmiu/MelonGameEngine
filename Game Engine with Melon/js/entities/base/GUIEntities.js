@@ -249,3 +249,40 @@ game.LevelFinishGUI = me.HUD_Item.extend({
         this.font.draw(context, text, coords.x - (size.width / 2), coords.y - (size.height / 2));
     }
 });
+
+/**
+ * not part of this class
+ */
+/*gameLevelSelectorWidget = me.GUI_Object.extend({
+    init: function (x, y, settings) {
+        settings.image = "coin";
+        settings.spritewidth = 35;
+        settings.spriteheight = 35;
+        this.levels = settings.levels.split(" ");
+        this.currentLevel = this.levels[0];
+        this.font = new me.BitmapFont("atascii", { x: 24 });
+
+        this.levelButtons = [];
+        for (var i = 0; i < this.levels.length; i++) {
+            this.levelButtons[i] = new game.LevelButton(x, y);
+            me.game.add((this.levelButtons[i]));
+        }
+        // parent constructor
+        this.parent(x, y, settings);
+    },
+
+    onClick: function () {
+        
+        // don't propagate the event
+        return true;
+    },
+
+    draw: function (context, x, y) {
+        //this.font.draw(context, this.currentLevel + "fdgs", window.screen.width / 5, window.screen.height / 4);
+        for (var i = 0; i < this.levels.length; i++) {
+            this.font.draw(context, this.levels[i], this.pos.x + (i * 30), this.pos.y);
+        }
+        this.parent(context, x, y);
+    },
+
+});*/

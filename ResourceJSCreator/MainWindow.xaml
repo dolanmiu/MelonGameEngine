@@ -1,11 +1,16 @@
-﻿<Controls:Window x:Class="ResourceJSCreator.MainWindow"
+﻿<Controls:Window x:Class="MelonJSHelper.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Loaded="OnLoad"  WindowStartupLocation="CenterScreen" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  WindowStartupLocation="CenterScreen" 
         xmlns:Controls="clr-namespace:Elysium.Controls;assembly=Elysium"
         xmlns:params="http://schemas.codeplex.com/elysium/params"
-        Title="Resource.JS Creator" Height="350" Width="525">
+        Title="MelonJS Helper" Height="600" Width="525" Loaded="OnLoad">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="RESOURCE" x:Name="resourcePage" />
+            <TabItem Header="ENTITIES" x:Name="entityCreatorPage" />
+            <TabItem Header="STATES" x:Name="stateManagerPage"/>
+            <TabItem Header="PLUGINS" x:Name="pluginManagerPage"/>
+            <TabItem Header="SETTINGS" x:Name="settingsPage"/>
+        </TabControl>
     </Grid>
 </Controls:Window>

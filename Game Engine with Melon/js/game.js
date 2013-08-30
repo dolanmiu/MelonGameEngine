@@ -27,14 +27,13 @@ var game = {
 
         // Initialize melonJS and display a loading screen.
         //me.state.change(me.state.LOADING);
+        game.loadEntities();
     },
 
     // Run on game resources loaded.
     "loaded": function () {
         me.state.set(me.state.MENU, new game.TitleScreen());        
         //me.debug.renderHitBox = true;
-
-        // Start the menu screen.
         me.state.change(me.state.MENU);
     }
 };

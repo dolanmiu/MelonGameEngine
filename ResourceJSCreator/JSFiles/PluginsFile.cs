@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace ResourceJSCreator
+namespace MelonJSHelper
 {
     public class PluginsFile : MelonJSFile
     {
@@ -29,10 +29,13 @@ namespace ResourceJSCreator
                 {
                     Plugin plugin = new Plugin(matched[1].Value);
                     plugins.Add(plugin);
-                    string version = CheckForVersion(lines[i]);
-                    if (version != "") plugin.Version = version;
+                    for (int j = 0; j < lines.Count; j++)
+                    {
+                        string version = CheckForVersion(lines[j]);
+                        if (version != "") plugin.Version = version;
+                    }
 
-                    int[] lineNumbers = FetchMethodRange(lines, "init");
+                    int[] lineNumbers = FetchClassMethodRange(lines, "init");
                     plugin.AddMethodFromString(lines.GetRange(lineNumbers[0], lineNumbers[1]));
                 }
             }
@@ -44,55 +47,34 @@ namespace ResourceJSCreator
             return match.Groups;
         }
 
-        protected int[] FetchMethodRange(List<string> lines, string methodName)
+        private string CheckForVersion(string line)
         {
-            int bracketCounter = 0;
-            bool started = false;
-            bool scanClass = true;
-            int lineNo = 0;
-            int methodStartNo = 0;
-            for (lineNo = 0; lineNo < lines.Count; lineNo++)
-            {
-                Match match = Regex.Match(lines[lineNo], methodName + @"\s*:\s*function\s*\(([A-Za-z0-9\-_, ]*)\)\s*({*)");
-                if (match.Success)
-                {
-                    methodStartNo = lineNo;
-                    while (scanClass)
-                    {
-                        if (lines[lineNo].Contains("{"))
-                        {
-                            bracketCounter++;
-                            started = true;
-                        }
-
-                        if (lines[lineNo].Contains("}"))
-                        {
-                            bracketCounter--;
-                        }
-
-                        if (bracketCounter == 0 && started == true && lineNo > 1)
-                        {
-                            return new int[] { methodStartNo, lineNo - methodStartNo };
-                        }
-                        lineNo++;
-                    }
-                }
-            }
-            return null;
-        }
-
-        private new string CheckForVersion(string line)
-        {
-            string matchStr = "version:\\s*\"([0-9.]+)\"";
-            Match match = Regex.Match(line, @matchStr);
+            Match match = Regex.Match(line, @"version:\s*" + "\"" + "([0-9.]+)" + "\"");
             if (match.Success)
             {
-                return match.Groups[0].Value;
+                return match.Groups[1].Value;
             }
             else
             {
                 return "";
             }
+        }
+
+        public string[] CreateJSFile()
+        {
+            List<string> output = new List<string>();
+            output.Add("(function () {");
+            foreach (Plugin plugin in plugins)
+            {
+                output.Add(plugin.ToString());
+            }
+
+            foreach (Plugin plugin in plugins)
+            {
+                output.Add("\n\tme.plugin.register(" + plugin.Name + ", \"" + plugin.Name + "\");");
+            }
+            output.Add("})();");
+            return output.ToArray();
         }
 
         #region Properties

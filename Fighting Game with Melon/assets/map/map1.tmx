@@ -45,12 +45,22 @@
   </data>
  </layer>
  <objectgroup name="player" width="30" height="30">
-  <object name="TopDownPlayerEntity" type="mainPlayer" x="453" y="72" width="112" height="110">
+  <object name="FighterPawn" type="mainPlayer" x="491" y="82" width="112" height="110">
    <properties>
     <property name="image" value="playerSprite"/>
     <property name="jump" value="up"/>
     <property name="left" value="LEFT"/>
     <property name="right" value="right"/>
+    <property name="spriteheight" value="96"/>
+    <property name="spritewidth" value="75"/>
+   </properties>
+  </object>
+  <object name="FighterPawn" type="mainPlayer" x="303" y="162" width="112" height="110">
+   <properties>
+    <property name="image" value="playerSprite"/>
+    <property name="jump" value="w"/>
+    <property name="left" value="a"/>
+    <property name="right" value="d"/>
     <property name="spriteheight" value="96"/>
     <property name="spritewidth" value="75"/>
    </properties>
@@ -74,5 +84,8 @@
     <property name="music1" value="forestMusic"/>
    </properties>
   </object>
+ </objectgroup>
+ <objectgroup name="pause" width="30" height="30">
+  <object name="PauseMenu" x="779" y="224" width="153" height="112"/>
  </objectgroup>
 </map>

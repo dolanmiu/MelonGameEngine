@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace ResourceJSCreator
+namespace MelonJSHelper
 {
     /// <summary>
     /// Interaction logic for Settings.xaml

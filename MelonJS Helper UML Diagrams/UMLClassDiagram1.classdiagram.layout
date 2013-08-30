@@ -1,1 +1,9 @@
-﻿ 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="UMLClassDiagram1">
+  <logicalClassDesignerModelMoniker Id="e9817754-d246-40db-8cb6-5747e9da0750" />
+  <nestedChildShapes>
+    <packageShape Id="2f72e25f-0602-4ef9-aa47-704378c302a6" absoluteBounds="0.5, 0.875, 1.75, 1.25" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="9fb87972-038d-4214-aa30-8a9f187ed4af" LastKnownName="ResourceJSCreator" />
+    </packageShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

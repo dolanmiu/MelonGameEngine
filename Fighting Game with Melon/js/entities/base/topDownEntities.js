@@ -6,6 +6,8 @@
         this.setVelocity(3, 3);
         this.bindKey("up", "up");
         this.bindKey("down", "down");
+        this.bindKey("left", "left");
+        this.bindKey("right", "right");
         //this.light = new game.DynamicLight(x, y, []);
         //me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
     },

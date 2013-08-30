@@ -47,14 +47,43 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    
     <PackageCertificateKeyFile>Stealth Game Engine with Melon_TemporaryKey.pfx</PackageCertificateKeyFile>
-    
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="assets\bgm\forestMusic.mp3" />
+    <Content Include="assets\bgm\titleMusic.mp3" />
+    <Content Include="assets\img\atascii.png" />
+    <Content Include="assets\img\background.png" />
+    <Content Include="assets\img\coin.png" />
+    <Content Include="assets\img\enemies\flyEnemy.png" />
+    <Content Include="assets\img\enemies\flyFly.png" />
+    <Content Include="assets\img\enemies\flyNormal.png" />
+    <Content Include="assets\img\enemies\fly_dead.png" />
+    <Content Include="assets\img\enemies\slimeDead.png" />
+    <Content Include="assets\img\enemies\slimeNormal.png" />
+    <Content Include="assets\img\enemies\slimeWalk.png" />
+    <Content Include="assets\img\exclaimBox.png" />
+    <Content Include="assets\img\finishStar.png" />
+    <Content Include="assets\img\lifeHeart.png" />
+    <Content Include="assets\img\mainScreenLogo.png" />
+    <Content Include="assets\img\menuBackground.jpg" />
+    <Content Include="assets\img\metatiles35x35.png" />
+    <Content Include="assets\img\pback.png" />
+    <Content Include="assets\img\playerSprite.png" />
+    <Content Include="assets\img\tileset.png" />
+    <Content Include="assets\map\levelSelectMap.tmx" />
+    <Content Include="assets\map\map1.tmx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="assets\map\menuMap.tmx" />
+    <Content Include="assets\map\settingsMap.tmx" />
+    <Content Include="assets\sfx\cling.mp3" />
+    <Content Include="assets\sfx\die.mp3" />
+    <Content Include="assets\sfx\enemykill.mp3" />
+    <Content Include="assets\sfx\jump.mp3" />
     <Content Include="default.html" />
     <Content Include="images\logo.png" />
     <Content Include="images\smalllogo.png" />
@@ -62,9 +91,27 @@
     <Content Include="images\storelogo.png" />
     <Content Include="js\default.js" />
     <Content Include="css\default.css" />
-    
+    <Content Include="js\engine\debugPanel.js" />
+    <Content Include="js\engine\engine.js" />
+    <Content Include="js\engine\gamvas.js" />
+    <Content Include="js\engine\illuminated.js" />
+    <Content Include="js\engine\melonJS-0.9.8.js" />
+    <Content Include="js\engine\underscore.js" />
+    <Content Include="js\entities\base\genericEntities.js" />
+    <Content Include="js\entities\base\GUIEntities.js" />
+    <Content Include="js\entities\base\lightEntities.js" />
+    <Content Include="js\entities\base\staticClasses.js" />
+    <Content Include="js\entities\base\particleEntities.js" />
+    <Content Include="js\entities\base\platformerEntities.js" />
+    <Content Include="js\entities\base\rayCastEntities.js" />
+    <Content Include="js\entities\base\topDownEntities.js" />
+    <Content Include="js\entities\base\waterEntities.js" />
+    <Content Include="js\entities\entities.js" />
+    <Content Include="js\game.js" />
+    <Content Include="js\resources.js" />
+    <Content Include="js\screens\base\screens.js" />
+    <Content Include="js\screens\play.js" />
     <None Include="Stealth Game Engine with Melon_TemporaryKey.pfx" />
-    
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />

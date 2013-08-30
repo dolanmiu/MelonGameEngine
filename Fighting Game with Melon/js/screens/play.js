@@ -8,22 +8,13 @@ game.PlayScreen = game.PlayScreenAbstract.extend({
     },
 });
 
-game.TitleScreen = game.TitleScreenAbstract.extend({
+game.TitleScreen = me.ScreenObject.extend({
     init: function () {
         this.parent();
-        this.scrollerfont = new me.BitmapFont("atascii", { x: 24 });
-        this.scrollertween = null;
-
-        this.scroller = "A COOL DEMO BY DOLAN       ";
-        this.scrollerpos = 600;
     },
 
     onResetEvent: function () {
         me.levelDirector.loadLevel("menuMap");
-        this.parent();
-        this.scrollerpos = 640;
-        this.scrollertween = new me.Tween(this).to({ scrollerpos: -2200 }, 10000).onComplete(this.scrollover.bind(this)).start();
-        //me.audio.playTrack("titleMusic");
     },
 });
 
@@ -58,3 +49,11 @@ game.GameOver = game.GameOverAbstract.extend({
         //me.audio.play("cling");
     },
 });
+
+game.loadStates = function () {
+    me.state.set(me.state.GAMEOVER, new game.GameOver());
+    me.state.set(me.state.PLAY, new game.PlayScreen());
+    me.state.set(me.state.LEVELSELECT, new game.LevelSelect());
+    me.state.set(me.state.SETTINGS, new game.Settings());
+
+}

@@ -4,7 +4,7 @@
 /*		a player entity																*/
 /*																					*/
 /************************************************************************************/
-game.PlatformPlayerEntity = me.ObjectEntity.extend({
+game.PlatformPlayerEntity = game.MainPlayer.extend({
 
     init: function (x, y, settings) {
         this.maxLives = settings.maxLives;
@@ -17,10 +17,8 @@ game.PlatformPlayerEntity = me.ObjectEntity.extend({
 
         // set the display to follow our position on one axis
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.HORIZONTAL);
-        this.alwaysUpdate = true;
-        this.canBreakTile = true;
+
         this.anchorPoint.set(0.5, 1.0);
-        this.type = "mainPlayer";
     },
 
     update: function () {
@@ -48,8 +46,6 @@ game.PlatformPlayerEntity = me.ObjectEntity.extend({
 
         }
 
-        this.updateMovement();
-
         // check if we fell into a hole
         if (!this.inViewport && (this.pos.y > me.video.getHeight())) {
             // if yes reset the game
@@ -69,7 +65,6 @@ game.PlatformPlayerEntity = me.ObjectEntity.extend({
             switch (res.obj.type) {
                 case me.game.ENEMY_OBJECT: {
                     if ((res.y > 0) && this.falling) {
-                        // jump
                         this.vel.y -= this.maxVel.y * me.timer.tick;
                     } else {
                         this.hurt();
@@ -78,7 +73,6 @@ game.PlatformPlayerEntity = me.ObjectEntity.extend({
                 }
 
                 case "spikeObject": {
-                    // jump & die
                     this.vel.y -= this.maxVel.y * me.timer.tick;
                     this.hurt();
                     break;
@@ -90,12 +84,7 @@ game.PlatformPlayerEntity = me.ObjectEntity.extend({
                 default: break;
             }
         }
-        // update animation if necessary
-        if (this.vel.x != 0 || this.vel.y != 0 || (this.renderable && this.renderable.isFlickering())) {
-            this.parent();
-            return true;
-        }
-        return false;
+        this.parent();
     },
 
     hurt: function () {

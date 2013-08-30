@@ -1,1 +1,81 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="8995b205-d89d-44f9-8bfd-b0df4102115d"
+  name="Controls"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="f1059926-64ce-4351-a087-d3d6d5ef8b98"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DElysium.Controls"
+      tag="ViewCode" />
+  </referencesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="027de4c0-e3ae-4382-bc87-ed661146ff68">
+      <profileInstance
+        Id="2662b25b-a3d7-4795-b253-38d5b8e7200d"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="8ab91bbf-605c-4771-81a1-248db3fa5a90"
+        name="Window"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d65c583e-9eff-4dd2-b171-a8a072ac6158"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FDolan%2FDocuments%2FVisual Studio 2012%2FProjects%2FGame Engine with Melon%2FResourceJSCreator%2FElysium.dll&quot; Namespace%3DElysium.Controls Type%3DWindow"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="078fc861-993d-42ae-8271-36e9bb974df2"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ff4b40ab-101a-45db-b45f-17967bc9c4df">
+                <propertyInstance
+                  Id="4e655be9-59bd-4489-afdf-86f4db5ba648"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="90226513-acb2-4eea-8905-42bc9de35e1e">
+                <propertyInstance
+                  Id="629c8795-f8b9-4d69-895c-ff127ad77a82"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="369cadc3-91c6-4c74-a948-3cd2235fecfa">
+                <propertyInstance
+                  Id="b406b836-7622-4864-b673-d21123eff0af"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6374f035-b639-4b94-b6aa-e76338b134ce">
+                <propertyInstance
+                  Id="735dac5e-b966-4997-880a-5839d06f4dbd"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6babae48-436f-4f38-918f-759d3d3c1f1e">
+                <propertyInstance
+                  Id="706132d4-b775-4949-b4db-de0cf2db7b48"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

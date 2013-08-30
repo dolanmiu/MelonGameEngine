@@ -28,6 +28,7 @@ var game = {
         // Initialize melonJS and display a loading screen.
         //me.state.change(me.state.LOADING);
         game.loadEntities();
+        game.loadStates();
     },
 
     // Run on game resources loaded.

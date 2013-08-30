@@ -1,1 +1,46 @@
-﻿ 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="e9817754-d246-40db-8cb6-5747e9da0750" name="UMLClassDiagram1" linkedPackageId="7cffc5a1-3866-4791-b294-3ff960c1135e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="8e6b7aa5-0d0a-4a65-8ba1-32d8cdc37458">
+      <profileInstance Id="4d76af8b-c4ad-40a0-a28d-bffca8373803" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="c0e31df2-6df2-429d-bcb6-a24cfba40fe1">
+      <profileInstance Id="59e26827-9a57-44c5-8931-7c87d3d9b4f2" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="6919bd65-1ef2-4102-a82b-fbe628f0cddc">
+      <profileInstance Id="ea8e031f-9beb-4284-ae16-8a44d5ee9a0d" name="CSharpProfile">
+        <elementDefinition Id="9696777f-01b4-463c-87bd-a5abdd54daf4" />
+      </profileInstance>
+      <elementDefinition Id="c1f8f028-a0b0-46c5-bd15-302c17862c4e" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="9fb87972-038d-4214-aa30-8a9f187ed4af" name="ResourceJSCreator" visibility="Private">
+        <referencesInternal>
+          <reference Id="1339c2d6-8cb3-4b63-8fcc-e6f48fc96070" handle="viewcode://./CodeSchema_Namespace?Namespace%3DResourceJSCreator" tag="ViewCode">
+            <elementDefinition Id="938f7e16-67c3-4e97-ac57-dd199b88e92d" />
+          </reference>
+        </referencesInternal>
+        <elementDefinition Id="0bbc8b21-97e7-4974-9018-adcc237d8f29" />
+        <profileInstances>
+          <packageHasProfileInstances Id="b0c6291d-bed3-4055-9f80-da9a3c7e143c">
+            <profileInstance Id="6c14ab2c-558f-4a83-bf8c-236b0013858b" name="CSharpProfile">
+              <elementDefinition Id="e573a939-0a9f-407c-9d66-f2b513a69a27" />
+            </profileInstance>
+            <elementDefinition Id="ea9a2c2c-85c9-41d3-838d-aa9f1d57b4f7" />
+          </packageHasProfileInstances>
+        </profileInstances>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+  </packagedElements>
+  <package Id="7cffc5a1-3866-4791-b294-3ff960c1135e" name="MelonJS Helper UML Diagrams">
+    <elementDefinition Id="e8775c72-d48c-4e57-baec-5917f14035e4" />
+  </package>
+</logicalClassDesignerModel>

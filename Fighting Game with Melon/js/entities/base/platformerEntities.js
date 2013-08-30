@@ -19,6 +19,8 @@ game.PlatformPlayerEntity = game.MainPlayer.extend({
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.HORIZONTAL);
 
         this.anchorPoint.set(0.5, 1.0);
+        this.bindKey("left", "left");
+        this.bindKey("right", "right");
     },
 
     update: function () {

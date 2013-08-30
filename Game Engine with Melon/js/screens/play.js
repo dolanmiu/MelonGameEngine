@@ -1,7 +1,6 @@
 game.PlayScreen = game.PlayScreenAbstract.extend({
     init: function () {
         this.parent(true);
-
     },
 
     onResetEvent: function (level) {
@@ -9,6 +8,8 @@ game.PlayScreen = game.PlayScreenAbstract.extend({
         me.input.bindKey(me.input.KEY.LEFT, "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.X, "jump", true);
+        me.input.bindKey(me.input.KEY.UP, "up", true);
+        me.input.bindKey(me.input.KEY.DOWN, "down", true);
         me.input.bindKey(me.input.KEY.ESC, "pause", true);
 
         me.game.HUD.addItem("score", new game.ScoreObject(200, 10));
@@ -33,11 +34,6 @@ game.TitleScreen = game.TitleScreenAbstract.extend({
 
         this.scroller = "A COOL DEMO BY DOLAN       ";
         this.scrollerpos = 600;
-        me.entityPool.add("background", game.BackgroundImage);
-        me.entityPool.add("playButton", game.PlayButton);
-        me.entityPool.add("settingsButton", game.SettingsButton);
-        me.entityPool.add("mainLogo", game.BobbingLogo);
-        me.entityPool.add("audio", game.AudioToggleButton);
     },
 
     onResetEvent: function () {
@@ -52,36 +48,11 @@ game.TitleScreen = game.TitleScreenAbstract.extend({
 game.LevelSelect = me.ScreenObject.extend({
     init: function () {
         this.parent(this);
-        this.levelButtonName = "levelButton";
-        me.entityPool.add(this.levelButtonName, game.LevelButton);
-        //this.addAsObject = true;
     },
 
     onResetEvent: function () {
         me.game.disableHUD();
         me.levelDirector.loadLevel("levelSelectMap");
-        var buttonList = this.findButtons(this.levelButtonName);
-        this.sortButtons(buttonList);
-    },
-
-    findButtons: function (buttonName) {
-        var buttonList = [];
-        var objectGroups = me.game.currentLevel.objectGroups;
-        for (var i = 0; i < objectGroups.length; i++) {
-            var objectsInGroup = objectGroups[i].objects;
-            for (var j = 0; j < objectsInGroup.length; j++) {
-                var object = objectsInGroup[j];
-                if (object.name == buttonName) {
-                    buttonList.push(object);
-                }
-            }
-        }
-        return buttonList;
-    },
-
-    sortButtons: function(buttonList) {
-        buttonList[0].x = game.screenWidth;
-        me.game.sort();
     },
 
     draw: function (context) {
@@ -92,9 +63,6 @@ game.LevelSelect = me.ScreenObject.extend({
 game.Settings = me.ScreenObject.extend({
     init: function () {
         this.parent(this);
-        //me.entityPool.add("background", game.BackgroundImage);
-        me.entityPool.add("slider", game.SoundSlider);
-        me.entityPool.add("audioToggleButton", game.AudioToggleButton);
     },
 
     onResetEvent: function () {

@@ -42,6 +42,7 @@ game.FireEmitter = game.ParticleEmitter.extend({
     },
 
     draw: function (context) {
+        context.save();
         var grd = context.createRadialGradient(this.pos.x + this.width / 2, this.pos.y + this.height / 2, 5, this.pos.x + this.width / 2, this.pos.y + this.height / 2, this.getRandom(0.9, 1) * 90);
         var intensity = this.getRandom(0.8, 1) * 0.5;
         grd.addColorStop(0, "rgba(237,146,0," + intensity + ")");
@@ -51,6 +52,7 @@ game.FireEmitter = game.ParticleEmitter.extend({
         context.arc(this.pos.x, this.pos.y, 100, 0, 2 * Math.PI, false);
         context.fillStyle = grd;
         context.fill();
+        context.restore();
         this.parent(context);
     },
 });
@@ -101,22 +103,33 @@ game.Particle = me.ObjectEntity.extend({
             return true;
         }
     },
+
+    hexToRgb: function(hex) {
+        var bigint = parseInt(hex, 16);
+        var r = (bigint >> 16) & 255;
+        var g = (bigint >> 8) & 255;
+        var b = bigint & 255;
+        return r + "," + g + "," + b;
+    }
 });
 
 game.VectorCircleParticle = game.Particle.extend({
     init: function (x, y, direction, randX, randY) {
         settings = {};
         this.parent(x, y, settings, direction, randX, randY);
-        this.alpha = 0.7;
+        if (!this.alpha) {
+            this.alpha = 0.7;
+        }
     },
 
     draw: function (context) {
-        context.globalAlpha = this.alpha;
+        context.save();
+        var rgbColour = this.hexToRgb(this.colour);
         context.beginPath();
         context.arc(this.pos.x, this.pos.y, this.radius, 0, 2 * Math.PI, false);
-        context.fillStyle = this.colour;
+        context.fillStyle = 'rgba(' + rgbColour + "," + this.alpha + ")";
         context.fill();
-        context.globalAlpha = 1;
+        context.restore();
     },
 });
 
@@ -126,7 +139,7 @@ game.WaterParticle = game.VectorCircleParticle.extend({
         this.parent(x, y, direction, randX, randY);
         this.setVelocity(30, 10);
         this.radius = Math.random() * 10;
-        this.colour = '#499589';
+        this.colour = '499589';
     },
 
     update: function () {
@@ -151,7 +164,7 @@ game.Sparks = game.VectorCircleParticle.extend({
         this.setVelocity(30, 30);
         this.gravity = 0.1;
         this.radius = Math.random() * 7;
-        this.colour = '#F7ED63';
+        this.colour = 'F7ED63';
         this.collidable = false;
         this.lifeTime = 600;
         this.alpha = 0.4;
@@ -164,7 +177,7 @@ game.FireParticle = game.VectorCircleParticle.extend({
         this.setVelocity(30, 1);
         this.gravity = -1;
         this.radius = this.getRandom(0.4, 1) * 7;
-        this.colour = '#E89F00';
+        this.colour = 'E89F00';
         this.collidable = false;
         this.lifeTime = 600;
         this.alpha = 0.4;
