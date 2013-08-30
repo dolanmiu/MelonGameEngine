@@ -44,7 +44,7 @@ namespace MelonJSHelper
         /// Initializes a new instance of the <see cref="BaseFile"/> class.
         /// </summary>
         /// <param name="rootFolder">The root folder.</param>
-        /// <param name="absDirectory">The abs directory.</param>
+        /// <param name="absDirectory">The absolute directory.</param>
         protected BaseFile(string rootFolder, string absDirectory)
         {
             //this.absDirectory = absDirectory;
@@ -81,7 +81,7 @@ namespace MelonJSHelper
         /// <summary>
         /// Reads the file.
         /// </summary>
-        /// <param name="directory">The directory.</param>
+        /// <param name="directory">The file directory.</param>
         /// <returns>Tuple{List{System.String}List{System.String}}.</returns>
         protected Tuple<List<string>, List<string>> ReadFile(string directory)
         {
