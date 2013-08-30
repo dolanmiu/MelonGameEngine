@@ -104,7 +104,7 @@ namespace MelonJSHelper
 
         #region Properties
         /// <summary>
-        /// Gets the folder relative path.
+        /// Gets the relative folder path.
         /// </summary>
         /// <value>The folder relative path.</value>
         public string FolderRelativePath
@@ -130,7 +130,7 @@ namespace MelonJSHelper
         }
 
         /// <summary>
-        /// Gets the file relative path.
+        /// Gets the relative file path.
         /// </summary>
         /// <value>The file relative path.</value>
         public string FileRelativePath

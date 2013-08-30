@@ -1,18 +1,43 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : MelonJSHelper
+// Author           : Dolan
+// Created          : 08-23-2013
+//
+// Last Modified By : Dolan
+// Last Modified On : 08-29-2013
+// ***********************************************************************
+// <copyright file="Method.cs" company="">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace MelonJSHelper
 {
+    /// <summary>
+    /// Class Method
+    /// </summary>
     public class Method
     {
+        /// <summary>
+        /// The name
+        /// </summary>
         private string name;
+        /// <summary>
+        /// The arguments
+        /// </summary>
         private string[] arguments;
+        /// <summary>
+        /// The lines
+        /// </summary>
         private List<ILine> lines = new List<ILine>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Method"/> class.
+        /// </summary>
+        /// <param name="methodSignature">The method signature.</param>
         public Method(string methodSignature)
         {
             string methodBody = methodSignature.Split(':')[0];
@@ -30,11 +55,19 @@ namespace MelonJSHelper
             arguments = methodArgs;
         }
 
+        /// <summary>
+        /// Adds a line to the method.
+        /// </summary>
+        /// <param name="line">The line.</param>
         public void AddLine(ILine line)
         {
             lines.Add(line);
         }
 
+        /// <summary>
+        /// Converts the methods arguments to string.
+        /// </summary>
+        /// <returns>System.String.</returns>
         public string ArgumentToString()
         {
             string argumentString = "";
@@ -46,6 +79,10 @@ namespace MelonJSHelper
             return argumentString;
         }
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
             string output = "\n\t" + name + ": function (" + ArgumentToString() + ") {";
@@ -58,6 +95,10 @@ namespace MelonJSHelper
         }
 
         #region Properties
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>The name.</value>
         public string Name
         {
             get
@@ -66,6 +107,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the arguments.
+        /// </summary>
+        /// <value>The arguments.</value>
         public string[] Arguments
         {
             get
@@ -74,6 +119,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the signature.
+        /// </summary>
+        /// <value>The signature.</value>
         public string Signature
         {
             get
@@ -88,6 +137,10 @@ namespace MelonJSHelper
                 return output;
             }
         }
+        /// <summary>
+        /// Gets the lines.
+        /// </summary>
+        /// <value>The lines.</value>
         public List<ILine> Lines
         {
             get

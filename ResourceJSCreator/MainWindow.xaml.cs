@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// ***********************************************************************
+// Assembly         : MelonJSHelper
+// Author           : Dolan
+// Created          : 07-12-2013
+//
+// Last Modified By : Dolan
+// Last Modified On : 08-29-2013
+// ***********************************************************************
+// <copyright file="MainWindow.xaml.cs" company="">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MelonJSHelper
 {
@@ -20,17 +20,40 @@ namespace MelonJSHelper
     /// </summary>
     public partial class MainWindow : Elysium.Controls.Window
     {
+        /// <summary>
+        /// The create JS
+        /// </summary>
         CreateResource createJS = new CreateResource();
+        /// <summary>
+        /// The state manager
+        /// </summary>
         ScreenManager stateManager = new ScreenManager();
+        /// <summary>
+        /// The entity creator
+        /// </summary>
         EntityCreator entityCreator = new EntityCreator();
+        /// <summary>
+        /// The plugins creator
+        /// </summary>
         PluginsCreator pluginsCreator = new PluginsCreator();
+        /// <summary>
+        /// The settings
+        /// </summary>
         Settings settings = new Settings();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainWindow"/> class.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Called when [load].
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void OnLoad(object sender, RoutedEventArgs e)
         {
             //this.Content = createJS;

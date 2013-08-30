@@ -1,18 +1,43 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : MelonJSHelper
+// Author           : Dolan
+// Created          : 08-27-2013
+//
+// Last Modified By : Dolan
+// Last Modified On : 08-29-2013
+// ***********************************************************************
+// <copyright file="NewMethod.cs" company="">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace MelonJSHelper
 {
+    /// <summary>
+    /// Class NewMethod
+    /// </summary>
     public class NewMethod : Code
     {
+        /// <summary>
+        /// The name
+        /// </summary>
         private string name;
+        /// <summary>
+        /// The arguments
+        /// </summary>
         private string[] arguments;
+        /// <summary>
+        /// The code blocks
+        /// </summary>
         private List<CodeBlock> codeBlocks = new List<CodeBlock>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NewMethod"/> class.
+        /// </summary>
+        /// <param name="methodSignature">The method signature.</param>
         public NewMethod(string methodSignature)
         {
             Match match = Regex.Match(methodSignature, @"([A-Za-z0-9\-_]+)\s*:\s*function\s*\(([^)]*)\)\s*{?");
@@ -30,6 +55,10 @@ namespace MelonJSHelper
             arguments = methodArgs;
         }
 
+        /// <summary>
+        /// Adds the code block.
+        /// </summary>
+        /// <param name="lines">The lines.</param>
         public void AddCodeBlock(List<string> lines)
         {
             for (int i = 0; i < lines.Count; i++)
@@ -59,6 +88,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
             string output = "";
@@ -78,6 +111,10 @@ namespace MelonJSHelper
         }
 
         #region Properties
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>The name.</value>
         public string Name
         {
             get
@@ -86,6 +123,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the arguments.
+        /// </summary>
+        /// <value>The arguments.</value>
         public string[] Arguments
         {
             get
@@ -94,6 +135,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the signature.
+        /// </summary>
+        /// <value>The signature.</value>
         public string Signature
         {
             get
@@ -109,6 +154,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets or sets the code blocks.
+        /// </summary>
+        /// <value>The code blocks.</value>
         public List<CodeBlock> CodeBlocks
         {
             get

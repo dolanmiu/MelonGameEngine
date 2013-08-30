@@ -1,19 +1,22 @@
-﻿using Microsoft.Win32;
+﻿// ***********************************************************************
+// Assembly         : MelonJSHelper
+// Author           : Dolan
+// Created          : 08-27-2013
+//
+// Last Modified By : Dolan
+// Last Modified On : 08-29-2013
+// ***********************************************************************
+// <copyright file="CreateResource.xaml.cs" company="">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MelonJSHelper
 {
@@ -29,17 +32,30 @@ namespace MelonJSHelper
         private List<EntityJSFile> entityFiles = new List<EntityJSFile>();
         private List<string> entityNames = new List<string>();*/
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateResource"/> class.
+        /// </summary>
         public CreateResource()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Called when [load].
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void OnLoad(object sender, RoutedEventArgs e)
         {
             AssetFileListBox.ItemsSource = Settings.AssetFiles;
             EntityFileListBox.ItemsSource = Settings.EntityNames;
         }
 
+        /// <summary>
+        /// Handles the GotFocus event of the UserControl control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void UserControl_GotFocus(object sender, RoutedEventArgs e)
         {
             AssetFileListBox.ItemsSource = Settings.AssetFiles;
@@ -109,6 +125,11 @@ namespace MelonJSHelper
             EntityFileListBox.Items.Refresh();
         }*/
 
+        /// <summary>
+        /// Handles the Click event of the CreateResourceButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void CreateResourceButton_Click(object sender, RoutedEventArgs e)
         {
             if (Settings.AssetFiles == null || Settings.ResourceJSDirectory == null)
@@ -119,6 +140,9 @@ namespace MelonJSHelper
             CreateResourceFile();
         }
 
+        /// <summary>
+        /// Creates the resource file.
+        /// </summary>
         private void CreateResourceFile()
         {
             List<string> stringsList = new List<string>();
@@ -133,6 +157,10 @@ namespace MelonJSHelper
             File.WriteAllLines(Settings.ResourceJSDirectory, fileStrings);
         }
 
+        /// <summary>
+        /// Creates the resource script.
+        /// </summary>
+        /// <returns>List{System.String}.</returns>
         private List<string> CreateResourceScript()
         {
             List<String> resourceStringsList = new List<String>();
@@ -178,6 +206,10 @@ namespace MelonJSHelper
             return resourceStringsList;
         }
 
+        /// <summary>
+        /// Creates the assets script JS file.
+        /// </summary>
+        /// <returns>List{System.String}.</returns>
         private List<string> CreateAssetsScript()
         {
             List<string> entityStringsList = new List<string>();

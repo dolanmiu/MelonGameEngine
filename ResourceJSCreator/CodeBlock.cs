@@ -1,21 +1,47 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : MelonJSHelper
+// Author           : Dolan
+// Created          : 08-27-2013
+//
+// Last Modified By : Dolan
+// Last Modified On : 08-29-2013
+// ***********************************************************************
+// <copyright file="CodeBlock.cs" company="">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace MelonJSHelper
 {
+    /// <summary>
+    /// Class CodeBlock
+    /// </summary>
     public class CodeBlock : Code
     {
+        /// <summary>
+        /// The line
+        /// </summary>
         ILine line;
+        /// <summary>
+        /// The code blocks
+        /// </summary>
         List<CodeBlock> codeBlocks = new List<CodeBlock>();
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeBlock"/> class.
+        /// </summary>
+        /// <param name="line">The line.</param>
         public CodeBlock(ILine line)
         {
             this.line = line;
         }
 
+        /// <summary>
+        /// Adds the code block to the code block list.
+        /// </summary>
+        /// <param name="lines">The lines.</param>
         public void AddCodeBlock(List<string> lines)
         {
             for (int i = 0; i < lines.Count; i++)
@@ -45,6 +71,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
             string output = "";
@@ -65,6 +95,10 @@ namespace MelonJSHelper
         }
 
         #region Properties
+        /// <summary>
+        /// Gets the line.
+        /// </summary>
+        /// <value>The line.</value>
         public ILine Line
         {
             get
@@ -73,6 +107,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the code blocks.
+        /// </summary>
+        /// <value>The code blocks.</value>
         public List<CodeBlock> CodeBlocks
         {
             get

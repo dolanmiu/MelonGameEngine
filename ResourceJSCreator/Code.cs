@@ -1,14 +1,32 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : MelonJSHelper
+// Author           : Dolan
+// Created          : 08-27-2013
+//
+// Last Modified By : Dolan
+// Last Modified On : 08-29-2013
+// ***********************************************************************
+// <copyright file="Code.cs" company="">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace MelonJSHelper
 {
+    /// <summary>
+    /// Class Code
+    /// </summary>
     public abstract class Code
     {
+        /// <summary>
+        /// Fetches the class method range. The line number it starts from to the line number it ends at.
+        /// </summary>
+        /// <param name="lines">The lines.</param>
+        /// <param name="methodName">Name of the method.</param>
+        /// <returns>System.Int32[][].</returns>
         protected int[] FetchClassMethodRange(List<string> lines, string methodName)
         {
             int bracketCounter = 0;
@@ -46,6 +64,12 @@ namespace MelonJSHelper
             return null;
         }
 
+        /// <summary>
+        /// Fetches the method range. The line number it starts from to the line number it ends at.
+        /// </summary>
+        /// <param name="lines">The lines.</param>
+        /// <param name="methodName">Name of the method.</param>
+        /// <returns>System.Int32[][].</returns>
         protected int[] FetchMethodRange(List<string> lines, string methodName)
         {
             int bracketCounter = 0;

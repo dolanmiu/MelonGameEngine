@@ -1,20 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// ***********************************************************************
+// Assembly         : MelonJSHelper
+// Author           : Dolan
+// Created          : 08-23-2013
+//
+// Last Modified By : Dolan
+// Last Modified On : 08-29-2013
+// ***********************************************************************
+// <copyright file="Screen.cs" company="">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 
 namespace MelonJSHelper
 {
+    /// <summary>
+    /// Class Screen
+    /// </summary>
     public class Screen : MelonJSObject
     {
+        /// <summary>
+        /// The state of the screen
+        /// </summary>
         private State state;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MelonJSObject" /> class.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="baseClass">The base class.</param>
         public Screen(string name, string baseClass) : base(name, baseClass)
         {
 
         }
 
+        /// <summary>
+        /// Gets the set state string.
+        /// </summary>
+        /// <returns>System.String.</returns>
         public string GetSetStateString()
         {
             if (state == null) return "";
@@ -22,6 +45,10 @@ namespace MelonJSHelper
             return output;
         }
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
             string output = "game." + Name + " = me.ScreenObject.extend({";
@@ -34,6 +61,10 @@ namespace MelonJSHelper
         }
 
         #region Properties
+        /// <summary>
+        /// Gets or sets the state.
+        /// </summary>
+        /// <value>The state.</value>
         public State State
         {
             get
@@ -47,6 +78,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets or sets the level.
+        /// </summary>
+        /// <value>The level.</value>
         public string Level
         {
             get
@@ -62,6 +97,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [variable level].
+        /// </summary>
+        /// <value><c>true</c> if [variable level]; otherwise, <c>false</c>.</value>
         public bool VariableLevel
         {
             get

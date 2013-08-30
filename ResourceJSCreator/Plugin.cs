@@ -1,20 +1,46 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : MelonJSHelper
+// Author           : Dolan
+// Created          : 08-27-2013
+//
+// Last Modified By : Dolan
+// Last Modified On : 08-29-2013
+// ***********************************************************************
+// <copyright file="Plugin.cs" company="">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MelonJSHelper
 {
+    /// <summary>
+    /// Class Plugin
+    /// </summary>
     public class Plugin : MelonJSObject
     {
+        /// <summary>
+        /// The version the plugin is for
+        /// </summary>
         private string version;
+        /// <summary>
+        /// The methods of that plugin
+        /// </summary>
         private List<NewMethod> methods = new List<NewMethod>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Plugin"/> class.
+        /// </summary>
+        /// <param name="name">The name.</param>
         public Plugin(string name) : base(name, "me.plugin.base") 
         {
         }
 
+        /// <summary>
+        /// Adds a method from an List of strings.
+        /// </summary>
+        /// <param name="methodLines">The method lines.</param>
         public void AddMethodFromString(List<string> methodLines)
         {
             NewMethod method = new NewMethod(methodLines[0]);
@@ -23,6 +49,10 @@ namespace MelonJSHelper
             method.AddCodeBlock(methodLines.GetRange(1, methodLines.Count - 1));
         }
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
             string output = "";
@@ -36,9 +66,11 @@ namespace MelonJSHelper
             return output;
         }
 
-        //public void 
-
         #region Properties
+        /// <summary>
+        /// Gets or sets the version.
+        /// </summary>
+        /// <value>The version.</value>
         public string Version
         {
             get
@@ -52,6 +84,11 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the method.
+        /// </summary>
+        /// <param name="methodName">Name of the method.</param>
+        /// <returns>NewMethod.</returns>
         private NewMethod GetMethod(string methodName)
         {
             foreach (NewMethod method in methods)
@@ -66,6 +103,12 @@ namespace MelonJSHelper
             return newMethod;
         }
 
+        /// <summary>
+        /// Gets the open function from method.
+        /// </summary>
+        /// <param name="method">The method.</param>
+        /// <param name="lineBody">The line body.</param>
+        /// <returns>OpenFunction.</returns>
         private OpenFunction GetOpenFunctionFromMethod(NewMethod method, string lineBody) 
         {
             foreach (CodeBlock cb in method.CodeBlocks)
@@ -83,6 +126,12 @@ namespace MelonJSHelper
             return of;
         }
 
+        /// <summary>
+        /// Gets the line.
+        /// </summary>
+        /// <param name="methodName">Name of the method.</param>
+        /// <param name="lineBody">The line body.</param>
+        /// <returns>ILine.</returns>
         private ILine GetLine(string methodName, string lineBody)
         {
             foreach (NewMethod method in methods)
@@ -101,6 +150,10 @@ namespace MelonJSHelper
             return null;
         }
 
+        /// <summary>
+        /// Gets or sets the object patched.
+        /// </summary>
+        /// <value>The object patched.</value>
         public string ObjectPatched
         {
             get
@@ -126,6 +179,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets or sets the method patched.
+        /// </summary>
+        /// <value>The method patched.</value>
         public string MethodPatched
         {
             get
@@ -151,6 +208,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the methods.
+        /// </summary>
+        /// <value>The methods.</value>
         public new List<NewMethod> Methods
         {
             get

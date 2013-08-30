@@ -1,20 +1,25 @@
-﻿using Microsoft.Win32;
+﻿// ***********************************************************************
+// Assembly         : MelonJSHelper
+// Author           : Dolan
+// Created          : 08-27-2013
+//
+// Last Modified By : Dolan
+// Last Modified On : 08-29-2013
+// ***********************************************************************
+// <copyright file="Settings.xaml.cs" company="">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Xml;
 using System.Xml.Linq;
 
 namespace MelonJSHelper
@@ -24,30 +29,76 @@ namespace MelonJSHelper
     /// </summary>
     public partial class Settings : UserControl
     {
+        /// <summary>
+        /// The asset directory
+        /// </summary>
         private static string assetDirectory;
+        /// <summary>
+        /// The entity files directory
+        /// </summary>
         private static string entityFilesDirectory;
+        /// <summary>
+        /// The screen file directory
+        /// </summary>
         private static string screenFileDirectory;
+        /// <summary>
+        /// The home made entities directory
+        /// </summary>
         private static string homeMadeEntitiesDirectory;
+        /// <summary>
+        /// The plugins file directory
+        /// </summary>
         private static string pluginsFileDirectory;
 
+        /// <summary>
+        /// The resource JS directory
+        /// </summary>
         private static string resourceJSDirectory;
+        /// <summary>
+        /// The screens file
+        /// </summary>
         private static ScreensFile screensFile;
+        /// <summary>
+        /// The home made entities file
+        /// </summary>
         private static HomeMadeEntitiesJSFile homeMadeEntitiesFile;
+        /// <summary>
+        /// The plugins file
+        /// </summary>
         private static PluginsFile pluginsFile;
 
+        /// <summary>
+        /// The asset files
+        /// </summary>
         private static List<AssetFile> assetFiles = new List<AssetFile>();
+        /// <summary>
+        /// The entity files
+        /// </summary>
         private static List<EntityJSFile> entityFiles = new List<EntityJSFile>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Settings"/> class.
+        /// </summary>
         public Settings()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Called when [load].
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         public void OnLoad(object sender, RoutedEventArgs e)
         {
         }
 
 
+        /// <summary>
+        /// Handles the Initialized event of the UserControl control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void UserControl_Initialized(object sender, EventArgs e)
         {
             ReadSettings(resourceJSDirectory, assetDirectory, entityFilesDirectory);
@@ -87,6 +138,11 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Handles the PreviewMouseUp event of the AssetFolderTextBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
         private void AssetFolderTextBox_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             //assetFiles.Clear();
@@ -95,6 +151,11 @@ namespace MelonJSHelper
             assetFiles = GetAssets(assets);
         }
 
+        /// <summary>
+        /// Handles the PreviewMouseUp event of the ResourceJSTextBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
         private void ResourceJSTextBox_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             string dir = OpenJSFileDialog();
@@ -105,6 +166,11 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Handles the PreviewMouseUp event of the EntitiesTextBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
         private void EntitiesTextBox_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             //entityFiles.Clear();
@@ -113,6 +179,11 @@ namespace MelonJSHelper
             entityFiles = GetEntities(entityFilesD);
         }
 
+        /// <summary>
+        /// Handles the PreviewMouseUp event of the LevelJSTextBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
         private void LevelJSTextBox_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             string dir = OpenJSFileDialog();
@@ -124,6 +195,11 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Handles the PreviewMouseUp event of the HomeMadeEntitiesFileTextBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
         private void HomeMadeEntitiesFileTextBox_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             string dir = OpenJSFileDialog();
@@ -135,6 +211,11 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Handles the PreviewMouseUp event of the PluginsTextBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
         private void PluginsTextBox_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             string dir = OpenJSFileDialog();
@@ -158,6 +239,11 @@ namespace MelonJSHelper
             return list;
         }*/
 
+        /// <summary>
+        /// Gets the assets.
+        /// </summary>
+        /// <param name="assetDirectory">The asset directory.</param>
+        /// <returns>List{AssetFile}.</returns>
         private List<AssetFile> GetAssets(string assetDirectory)
         {
             string[] files = Directory.GetFiles(assetDirectory, "*.*", SearchOption.AllDirectories);
@@ -170,6 +256,11 @@ namespace MelonJSHelper
             return assetsTemp;
         }
 
+        /// <summary>
+        /// Gets the entities.
+        /// </summary>
+        /// <param name="entityFilesDirectory">The entity files directory.</param>
+        /// <returns>List{EntityJSFile}.</returns>
         private List<EntityJSFile> GetEntities(string entityFilesDirectory)
         {
             string[] files = Directory.GetFiles(entityFilesDirectory, "*.*", SearchOption.AllDirectories);
@@ -183,6 +274,10 @@ namespace MelonJSHelper
             return entitiesTemp;
         }
 
+        /// <summary>
+        /// Opens the JS file dialog.
+        /// </summary>
+        /// <returns>System.String.</returns>
         private string OpenJSFileDialog()
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -203,6 +298,11 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the entity names.
+        /// </summary>
+        /// <param name="files">The files.</param>
+        /// <returns>List{System.String}.</returns>
         private static List<string> GetEntityNames(List<EntityJSFile> files)
         {
             List<string> fileNames = new List<string>();
@@ -213,11 +313,19 @@ namespace MelonJSHelper
             return fileNames;
         }
 
+        /// <summary>
+        /// Gets the resource JS.
+        /// </summary>
         private void GetResourceJS()
         {
 
         }
 
+        /// <summary>
+        /// Shows the folder dialog.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <returns>System.String.</returns>
         private string ShowFolderDialog(object sender)
         {
             var dialog = new System.Windows.Forms.FolderBrowserDialog();
@@ -228,11 +336,26 @@ namespace MelonJSHelper
             return dialog.SelectedPath;
         }
 
+        /// <summary>
+        /// Handles the Click event of the SaveSettingsButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void SaveSettingsButton_Click(object sender, RoutedEventArgs e)
         {
             SaveSettings(resourceJSDirectory, assetDirectory, entityFilesDirectory, screenFileDirectory, homeMadeEntitiesDirectory, pluginsFileDirectory);
         }
 
+        /// <summary>
+        /// Saves the settings.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
+        /// <param name="assets">The assets.</param>
+        /// <param name="entities">The entities.</param>
+        /// <param name="screens">The screens.</param>
+        /// <param name="homeEntities">The home entities.</param>
+        /// <param name="plugins">The plugins.</param>
+        /// <returns>XDocument.</returns>
         private XDocument SaveSettings(string resource, string assets, string entities, string screens, string homeEntities, string plugins)
         {
             XDocument doc = new XDocument(
@@ -250,6 +373,12 @@ namespace MelonJSHelper
             return doc;
         }
 
+        /// <summary>
+        /// Reads the settings.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
+        /// <param name="assets">The assets.</param>
+        /// <param name="entities">The entities.</param>
         private void ReadSettings(string resource, string assets, string entities)
         {
             XDocument xDoc = new XDocument();
@@ -302,6 +431,10 @@ namespace MelonJSHelper
         }
 
         #region Properties
+        /// <summary>
+        /// Gets the asset files.
+        /// </summary>
+        /// <value>The asset files.</value>
         public static List<AssetFile> AssetFiles 
         {
             get
@@ -310,6 +443,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the entity files.
+        /// </summary>
+        /// <value>The entity files.</value>
         public static List<EntityJSFile> EntityFiles
         {
             get
@@ -318,6 +455,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the entity names.
+        /// </summary>
+        /// <value>The entity names.</value>
         public static List<string> EntityNames
         {
             get
@@ -326,6 +467,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the resource JS directory.
+        /// </summary>
+        /// <value>The resource JS directory.</value>
         public static string ResourceJSDirectory
         {
             get
@@ -334,6 +479,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the screen file directory.
+        /// </summary>
+        /// <value>The screen file directory.</value>
         public static string ScreenFileDirectory
         {
             get
@@ -342,6 +491,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the screens.
+        /// </summary>
+        /// <value>The screens.</value>
         public static List<Screen> Screens
         {
             get
@@ -357,6 +510,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the screens file.
+        /// </summary>
+        /// <value>The screens file.</value>
         public static ScreensFile ScreensFile
         {
             get
@@ -365,6 +522,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the home made entities file.
+        /// </summary>
+        /// <value>The home made entities file.</value>
         public static HomeMadeEntitiesJSFile HomeMadeEntitiesFile
         {
             get
@@ -373,6 +534,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the home made entities.
+        /// </summary>
+        /// <value>The home made entities.</value>
         public static List<Entity> HomeMadeEntities
         {
             get
@@ -382,6 +547,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the plugins file.
+        /// </summary>
+        /// <value>The plugins file.</value>
         public static PluginsFile PluginsFile
         {
             get
@@ -390,6 +559,10 @@ namespace MelonJSHelper
             }
         }
 
+        /// <summary>
+        /// Gets the plugins.
+        /// </summary>
+        /// <value>The plugins.</value>
         public static List<Plugin> Plugins
         {
             get
