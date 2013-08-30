@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="ResourceJSCreator.ScreenManager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Loaded="OnLoad"
+             d:DesignHeight="600" d:DesignWidth="600" Initialized="UserControl_Initialized">
+    <Grid>
+        <ListBox x:Name="ScreenListBox" DisplayMemberPath="Name" Margin="10,10,10,258" SelectionChanged="ScreenListBox_SelectionChanged" Background="#FFF9F9F9"/>
+        <Label Content="State:" HorizontalAlignment="Left" Margin="10,0,0,175" Width="131" FontSize="16" Height="37" VerticalAlignment="Bottom"/>
+        <ComboBox x:Name="ScreenStateComboBox" DisplayMemberPath="Name" Margin="146,0,10,175" SelectionChanged="ScreenStateComboBox_SelectionChanged" Height="37" VerticalAlignment="Bottom"/>
+        <Label Content="Level Name:" HorizontalAlignment="Left" Margin="10,0,0,134" Width="131" FontSize="16" Height="36" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="LevelTextBox" Height="36" Margin="146,0,162,134" TextWrapping="Wrap" VerticalAlignment="Bottom" TextChanged="LevelTextBox_TextChanged"/>
+        <CheckBox x:Name="VariableLevelCheckBox" Content="Variable Level" Margin="0,0,10,142" Checked="VariableLevelCheckBox_Changed" Unchecked="VariableLevelCheckBox_Changed" FontSize="16" HorizontalAlignment="Right" Width="137" Height="23" VerticalAlignment="Bottom"/>
+        <Button x:Name="SaveLevelButton" Content="Save Screens into File" Margin="10,0,10,10" Height="57" VerticalAlignment="Bottom" Click="SaveLevelButton_Click"/>
+        <Button x:Name="NewLevelButton" Content="Create New Screen" Margin="10,0,10,72" Height="57" VerticalAlignment="Bottom" Click="NewLevelButton_Click"/>
+        <Label Content="Screen Name:" HorizontalAlignment="Left" Margin="10,0,0,217" Width="131" FontSize="16" Height="36" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="ScreenNameTextBox" Height="36" Margin="146,0,10,217" TextWrapping="Wrap" VerticalAlignment="Bottom" TextChanged="ScreenNameTextBox_TextChanged"/>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Game_Engine_with_Melon</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- Game_Engine_with_Melon references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+</head>
+<body>
+    <div id="content">
+        <div id="screen"></div>
+        <script type="text/javascript" src="js/engine/melonJS-0.9.8.js"></script>
+        <script type="text/javascript" src="js/engine/gamvas.js"></script>
+        <script type="text/javascript" src="js/engine/underscore.js"></script>
+        <script type="text/javascript" src="js/engine/debugPanel.js"></script>
+        <script type="text/javascript" src="js/engine/illuminated.js"></script>
+        <script type="text/javascript" src="js/game.js"></script>
+        <script type="text/javascript" src="js/resources.js"></script>
+        <script type="text/javascript" src="js/entities/base/genericEntities.js"></script>
+        <script type="text/javascript" src="js/entities/base/platformerEntities.js"></script>
+        <script type="text/javascript" src="js/entities/base/topDownEntities.js"></script>
+        <script type="text/javascript" src="js/entities/base/waterEntities.js"></script>
+        <script type="text/javascript" src="js/entities/base/particleEntities.js"></script>
+        <script type="text/javascript" src="js/entities/base/GUIEntities.js"></script>
+        <script type="text/javascript" src="js/entities/base/staticClasses.js"></script>
+        <script type="text/javascript" src="js/entities/base/rayCastEntities.js"></script>
+        <script type="text/javascript" src="js/entities/base/lightEntities.js"></script>
+        <script type="text/javascript" src="js/entities/entities.js"></script>
+        <script type="text/javascript" src="js/screens/base/screens.js"></script>
+        <script type="text/javascript" src="js/screens/play.js"></script>
+        <script type="text/javascript" src="js/engine/engine.js"></script>
+        <script type="text/javascript" src="js/engine/StackBlur.js"></script>
+        <script type="text/javascript">
+            /* Bootstrap */
+            window.onReady(function onReady() {
+                game.onload();
+            });
+        </script>
+    </div>
+</body>
+</html>

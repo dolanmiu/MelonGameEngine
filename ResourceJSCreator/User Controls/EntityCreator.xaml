@@ -1,0 +1,18 @@
+﻿<UserControl x:Name="EntityCreatorUserControl" x:Class="ResourceJSCreator.EntityCreator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Loaded="OnLoad"
+             d:DesignHeight="600" d:DesignWidth="600" Initialized="EntityCreatorUserControl_Initialized">
+    <Grid>
+        <ListBox x:Name="EntitiesListBox" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="10,10,0,10" Width="280" Background="#FFF9F9F9" SelectionChanged="EntitiesListBox_SelectionChanged"/>
+        <ListBox x:Name="EventsListBox" DisplayMemberPath="Name" Height="138" Margin="295,46,10,0" VerticalAlignment="Top"/>
+        <Button Content="Add Event" HorizontalAlignment="Left" Height="41" Margin="295,189,0,0" VerticalAlignment="Top" Width="144"/>
+        <Button Content="Delete Event" HorizontalAlignment="Left" Height="41" Margin="444,189,0,0" VerticalAlignment="Top" Width="146"/>
+        <ListBox HorizontalAlignment="Left" Height="208" Margin="295,271,0,0" VerticalAlignment="Top" Width="295"/>
+        <Label Content="Events" Height="31" Margin="295,10,10,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Actions" Height="31" Margin="295,235,10,0" VerticalAlignment="Top" FontSize="18"/>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="ResourceJSCreator.PluginsCreator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Loaded="OnLoad"
+             d:DesignHeight="600" d:DesignWidth="600" Initialized="UserControl_Initialized">
+    <Grid>
+        <Button x:Name="SavePluginsButton" Content="Save Plugins" Margin="10,0,10,10" Height="47" VerticalAlignment="Bottom" Click="SavePluginsButton_Click"/>
+        <Button x:Name="NewPluginButton" Content="New Plugin" Margin="10,0,10,62" Height="47" VerticalAlignment="Bottom" Click="NewPluginButton_Click"/>
+        <ListBox x:Name="PluginsListBox" Margin="10,10,10,298" Background="#FFF9F9F9"/>
+        <TextBox Margin="209,0,10,252" TextWrapping="Wrap" Text="TextBox" Height="41" VerticalAlignment="Bottom"/>
+        <Label Content="Plugin Name:" HorizontalAlignment="Left" Height="41" Margin="10,0,0,252" VerticalAlignment="Bottom" Width="194" FontSize="18"/>
+        <Label Content="Patch Version:" HorizontalAlignment="Left" Height="41" Margin="10,0,0,206" VerticalAlignment="Bottom" Width="194" FontSize="18"/>
+        <ComboBox Height="41" Margin="209,0,10,206" VerticalAlignment="Bottom"/>
+        <TextBox Margin="209,0,10,160" TextWrapping="Wrap" Text="TextBox" Height="41" VerticalAlignment="Bottom"/>
+        <TextBox Margin="209,0,10,114" TextWrapping="Wrap" Text="TextBox" Height="41" VerticalAlignment="Bottom"/>
+        <Label Content="Object Patched:" HorizontalAlignment="Left" Height="41" Margin="10,0,0,160" VerticalAlignment="Bottom" Width="194" FontSize="18"/>
+        <Label Content="Method of Object:" HorizontalAlignment="Left" Height="41" Margin="10,0,0,114" VerticalAlignment="Bottom" Width="194" FontSize="18"/>
+
+    </Grid>
+</UserControl>

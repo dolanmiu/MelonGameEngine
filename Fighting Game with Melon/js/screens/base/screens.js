@@ -1,10 +1,6 @@
 ﻿/* the in game stuff*/
 game.PlayScreenAbstract = me.ScreenObject.extend({
 
-    init: function () {
-        this.parent(true);
-    },
-
     onResetEvent: function (level) {
         if (this.level == null) {
             this.level = level;
@@ -13,42 +9,10 @@ game.PlayScreenAbstract = me.ScreenObject.extend({
         // load a level
         me.levelDirector.loadLevel(this.level);
         // add HUD items
-        me.game.addHUD(0, 0, game.screenWidth, game.screenHeight);
-        this.pauseGUI = new game.PauseGUI();
-        me.game.HUD.addItem("pause", this.pauseGUI);
+        //me.game.addHUD(0, 0, game.screenWidth, game.screenHeight);
         //this.levelFinishGUI = new game.LevelFinishGUI();
         //me.game.HUD.addItem("levelFinishGUI", this.levelFinishGUI);
     },
-
-    update: function () {
-        this.paused = false;
-        if (me.input.isKeyPressed('pause')) {
-            me.state.pause();
-            this.paused = true;
-            var resume_loop = setInterval(function check_resume() {
-                if (me.input.isKeyPressed('pause')) {
-                    clearInterval(resume_loop);
-                    me.state.resume();
-                }
-            }, 100);
-        }
-        return true;
-    },
-
-    draw: function (context) {
-        if (this.paused) {
-            this.pauseGUI.show(context);
-            //var background = me.video.applyRGBFilter(me.video.getScreenCanvas(), "b&w");
-            //context.drawImage(background.canvas, 0, 0);
-            // Render the main frameBuffer
-            me.video.blitSurface();
-        }
-    },
-    /* ---
- 
-    action to perform when game is finished (state change)
- 
-    --- */
 });
 
 game.TitleScreenAbstract = me.ScreenObject.extend({

@@ -1,0 +1,1 @@
+﻿//Write your own Object Entitys here :) Don't forget to recreate resource.js after!
