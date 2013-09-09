@@ -128,6 +128,7 @@ namespace MelonJSHelper
             if (((ComboBox)sender).SelectedItem == null) return;
             string selectedVersion = (string)((ComboBox)sender).SelectedItem;
             Plugin p = (Plugin)PluginsListBox.SelectedItem;
+            if (p == null) return;
             p.Version = selectedVersion;
         }
 

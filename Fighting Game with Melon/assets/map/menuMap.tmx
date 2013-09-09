@@ -42,12 +42,16 @@
     <property name="centreX" value="true"/>
    </properties>
   </object>
-  <object name="ScrollingText" x="111" y="246" width="133" height="81"/>
+ </objectgroup>
+ <objectgroup name="text" width="50" height="50">
   <object name="TextBlock" x="328" y="313" width="99" height="40">
    <properties>
     <property name="centrex" value="true"/>
     <property name="text" value="HELLO WORLD"/>
    </properties>
   </object>
+ </objectgroup>
+ <objectgroup name="scrollingText" width="50" height="50">
+  <object name="ScrollingText" x="111" y="246" width="133" height="81"/>
  </objectgroup>
 </map>

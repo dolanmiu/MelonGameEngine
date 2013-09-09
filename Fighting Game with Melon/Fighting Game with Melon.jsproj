@@ -74,6 +74,7 @@
     <Content Include="assets\img\pback.png" />
     <Content Include="assets\img\playerSprite.png" />
     <Content Include="assets\img\tileset.png" />
+    <Content Include="assets\map\gameOverMap.tmx" />
     <Content Include="assets\map\levelSelectMap.tmx" />
     <Content Include="assets\map\map1.tmx">
       <SubType>Designer</SubType>

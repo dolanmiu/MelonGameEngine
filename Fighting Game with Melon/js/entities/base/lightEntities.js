@@ -1,5 +1,23 @@
-﻿game.DynamicRayCastLight = me.ObjectEntity.extend({
+﻿/**
+ * @fileOverview Lights for the games
+ * @author Dolan Miu</a>
+ * @version 1.0;
+ */
 
+/**
+ * Dynamic Ray Cast Light
+ * Light made by using the sweep function and ray casting
+ * @constructor
+ * @extends me.ObjectEntity
+ */
+game.DynamicRayCastLight = me.ObjectEntity.extend({
+    /**
+     * Initialise object
+     * @param  {integer} x
+     * @param  {integer} y
+     * @param  {me.ObjectSettings} settings
+     * @return {void}
+     */
     init: function (x, y, settings) {
         this.visibility = new Visibility();
         this.parent(x, y, settings);
@@ -19,6 +37,10 @@
         this.visibility.sweep(Math.PI);
     },
 
+    /**
+     * Create collision boxes for light
+     * @return {Object[]} boxes
+     */
     createCollisionBoxes: function () {
         var boxes = [];
         var collisionLayer = me.game.currentLevel.getLayerByName("collision").layerData;
@@ -38,10 +60,20 @@
         return boxes;
     },
 
+    /**
+     * Update object
+     * @return {void}
+     */
     update: function () {
         this.parent();
     },
 
+    /**
+     * Update the light position
+     * @param  {integer} x
+     * @param  {integer} y
+     * @return {void}
+     */
     updatePos: function (x, y) {
         this.pos.x = x;
         this.pos.y = y;
@@ -49,6 +81,11 @@
         this.visibility.sweep(Math.PI);
     },
 
+    /**
+     * Draw the light
+     * @param  {Context2d} context
+     * @return {void}
+     */
     draw: function (context) {
         context.save();
         context.fillStyle = LightDrawEffects.CandleFill(context, this.pos.x, this.pos.y, 1000);
@@ -66,6 +103,16 @@
         //this.drawSegments(context, path, null, this.visibility, this.pos, me.game.currentLevel.width);
     },
 
+    /**
+     * Draw the individual triangular segments for the light
+     * @param  {Context2d} g
+     * @param  {me.Vector2d[]} path
+     * @param  {string} option
+     * @param  {Visiblity} visibility
+     * @param  {me.Vector2d} center
+     * @param  {float} size
+     * @return {void}
+     */
     drawSegments: function (g, path, option, visibility, center, size) {
         /*var maxAngle = Math.PI;
 
@@ -122,6 +169,12 @@
         g.restore();
     },
 
+    /**
+     * Compute the visible area points
+     * @param  {me.Vector2d} center
+     * @param  {path[]} output
+     * @return {object[]}
+     */
     computeVisibleAreaPaths: function (center, output) {
         var path1 = [];
         var path2 = [];
@@ -153,8 +206,20 @@
     }
 });
 
+/**
+ * Dynamic Light
+ * Light made using Illuminated.js
+ * @constructor
+ * @extends me.ObjectEntity
+ */
 game.DynamicLight = me.ObjectEntity.extend({
-
+    /**
+     * Initialise object
+     * @param  {integer} x
+     * @param  {integer} y
+     * @param  {me.ObjectSettings} settings
+     * @return {void}
+     */
     init: function (x, y, settings) {
         if (!settings.angle) {
             settings.angle = Math.PI;
@@ -182,6 +247,10 @@ game.DynamicLight = me.ObjectEntity.extend({
         this.parent(x, y, settings);
     },
 
+    /**
+     * Create collision boxes used to calculate light obstruction
+     * @return {illuminated.Rectangle[]}
+     */
     createCollisionBoxes: function () {
         var boxes = [];
         var collisionLayer = me.game.currentLevel.getLayerByName("collision").layerData;
@@ -200,6 +269,12 @@ game.DynamicLight = me.ObjectEntity.extend({
         return boxes;
     },
 
+    /**
+     * Update the object
+     * @param  {integer} x
+     * @param  {integer} y
+     * @return {void}
+     */
     update: function (x, y) {
         if (me.game.DarkMask) {
             if (!_.contains(me.game.DarkMask.lights, this.light)) {
@@ -213,6 +288,11 @@ game.DynamicLight = me.ObjectEntity.extend({
         this.parent();
     },
 
+    /**
+     * Draw the object
+     * @param  {Context2d} context
+     * @return {void}
+     */
     draw: function (context) {
         context.save();
         context.globalCompositeOperation = "lighter";
@@ -232,20 +312,44 @@ game.DynamicLight = me.ObjectEntity.extend({
     },
 });
 
+/**
+ * Dark Mask
+ * Create a shadowy area where there is absence of light
+ * @constructor
+ * @extends me.ObjectEntity
+ */
 game.DarkMask = me.ObjectEntity.extend({
-
+    /**
+     * Initialise object
+     * @param  {integer} x
+     * @param  {integer} y
+     * @param  {me.ObjectSettings} settings
+     * @return {void}
+     */
     init: function (x, y, settings) {
         this.parent(x, y, settings);
         var opacity = parseFloat(settings.opacity);
+        this.alwaysUpdate = true;
         me.game.DarkMask = new illuminated.DarkMask({ color: 'rgba(0,0,0,' + opacity + ')' });
     },
 
+    /**
+     * Update the object
+     * @return {void}
+     */
     update: function () {
         me.game.DarkMask.compute(me.game.currentLevel.width, me.game.currentLevel.width);
         this.parent();
+        this.pos.x = game.playerPos.x;
     },
 
+    /**
+     * Draw the object
+     * @param  {Context2d} context
+     * @return {void}
+     */
     draw: function (context) {
         me.game.DarkMask.render(context);
+        this.parent(context);
     },
 });

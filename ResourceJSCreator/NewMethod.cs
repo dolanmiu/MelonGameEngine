@@ -64,13 +64,13 @@ namespace MelonJSHelper
             for (int i = 0; i < lines.Count; i++)
             {
                 CodeBlock cb = null;
-                Match match = Regex.Match(lines[i], @"([A-Za-z0-9\-_.]+)\s*=\s*([^;]+)");
+                Match match = Regex.Match(lines[i], @"([A-Za-z0-9\-_.]+)\s*=\s*([^;]+)"); //assigment
                 if (match.Groups[0].Value != "")
                 {
                     cb = new CodeBlock(new StatementLine(match.Groups[1].Value, match.Groups[2].Value));
                 }
 
-                match = Regex.Match(lines[i], @"([A-Za-z0-9\-_.]+)\(([A-Za-z0-9\-_.]+)\)");
+                match = Regex.Match(lines[i], @"([A-Za-z0-9\-_.]+)\(([A-Za-z0-9\-_.]*)\)");
                 if (match.Groups[0].Value != "")
                 {
                     cb = new CodeBlock(new MethodLine(match.Groups[1].Value, Regex.Split(match.Groups[2].Value, "\\s*;\\s*")));

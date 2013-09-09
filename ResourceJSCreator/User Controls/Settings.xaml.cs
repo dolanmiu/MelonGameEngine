@@ -30,30 +30,9 @@ namespace MelonJSHelper
     public partial class Settings : UserControl
     {
         /// <summary>
-        /// The asset directory
+        /// The directories
         /// </summary>
-        private static string assetDirectory;
-        /// <summary>
-        /// The entity files directory
-        /// </summary>
-        private static string entityFilesDirectory;
-        /// <summary>
-        /// The screen file directory
-        /// </summary>
-        private static string screenFileDirectory;
-        /// <summary>
-        /// The home made entities directory
-        /// </summary>
-        private static string homeMadeEntitiesDirectory;
-        /// <summary>
-        /// The plugins file directory
-        /// </summary>
-        private static string pluginsFileDirectory;
-
-        /// <summary>
-        /// The resource JS directory
-        /// </summary>
-        private static string resourceJSDirectory;
+        private static FileDirectories fd;
         /// <summary>
         /// The screens file
         /// </summary>
@@ -101,40 +80,40 @@ namespace MelonJSHelper
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void UserControl_Initialized(object sender, EventArgs e)
         {
-            ReadSettings(resourceJSDirectory, assetDirectory, entityFilesDirectory);
-            if (resourceJSDirectory != null)
+            fd = XMLReaderWriter.ReadSettings();
+            if (!String.IsNullOrEmpty(fd.ResourceJSDirectory))
             {
-                ResourceJSTextBox.Text = resourceJSDirectory;
+                ResourceJSTextBox.Text = fd.ResourceJSDirectory;
             }
 
-            if (assetDirectory != null)
+            if (!String.IsNullOrEmpty(fd.AssetDirectory))
             {
-                AssetFolderTextBox.Text = assetDirectory;
-                assetFiles = GetAssets(assetDirectory);
+                AssetFolderTextBox.Text = fd.AssetDirectory;
+                assetFiles = GetAssets(fd.AssetDirectory);
             }
 
-            if (entityFilesDirectory != null)
+            if (!String.IsNullOrEmpty(fd.EntityFilesDirectory))
             {
-                EntitiesTextBox.Text = entityFilesDirectory;
-                entityFiles = GetEntities(entityFilesDirectory);
+                EntitiesTextBox.Text = fd.EntityFilesDirectory;
+                entityFiles = GetEntities(fd.EntityFilesDirectory);
             }
 
-            if (screenFileDirectory != null)
+            if (!String.IsNullOrEmpty(fd.ScreenFileDirectory))
             {
-                ScreenJSTextBox.Text = screenFileDirectory;
-                screensFile = new ScreensFile(screenFileDirectory, screenFileDirectory);
+                ScreenJSTextBox.Text = fd.ScreenFileDirectory;
+                screensFile = new ScreensFile(fd.ScreenFileDirectory, fd.ScreenFileDirectory);
             }
 
-            if (homeMadeEntitiesDirectory != null)
+            if (!String.IsNullOrEmpty(fd.HomeMadeEntitiesDirectory))
             {
-                HomeMadeEntitiesFileTextBox.Text = homeMadeEntitiesDirectory;
-                homeMadeEntitiesFile = new HomeMadeEntitiesJSFile(homeMadeEntitiesDirectory);
+                HomeMadeEntitiesFileTextBox.Text = fd.HomeMadeEntitiesDirectory;
+                homeMadeEntitiesFile = new HomeMadeEntitiesJSFile(fd.HomeMadeEntitiesDirectory);
             }
 
-            if (pluginsFileDirectory != null)
+            if (!String.IsNullOrEmpty(fd.PluginsFileDirectory))
             {
-                PluginsTextBox.Text = pluginsFileDirectory;
-                pluginsFile = new PluginsFile(pluginsFileDirectory);
+                PluginsTextBox.Text = fd.PluginsFileDirectory;
+                pluginsFile = new PluginsFile(fd.PluginsFileDirectory);
             }
         }
 
@@ -147,7 +126,7 @@ namespace MelonJSHelper
         {
             //assetFiles.Clear();
             string assets = ShowFolderDialog(sender);
-            assetDirectory = assets;
+            fd.AssetDirectory = assets;
             assetFiles = GetAssets(assets);
         }
 
@@ -162,7 +141,7 @@ namespace MelonJSHelper
             if (dir != null)
             {
                 ResourceJSTextBox.Text = dir;
-                resourceJSDirectory = dir;
+                fd.ResourceJSDirectory = dir;
             }
         }
 
@@ -175,7 +154,7 @@ namespace MelonJSHelper
         {
             //entityFiles.Clear();
             string entityFilesD = ShowFolderDialog(sender);
-            entityFilesDirectory = entityFilesD;
+            fd.EntityFilesDirectory = entityFilesD;
             entityFiles = GetEntities(entityFilesD);
         }
 
@@ -191,7 +170,7 @@ namespace MelonJSHelper
             {
                 ScreenJSTextBox.Text = dir;
                 screensFile = new ScreensFile(dir, dir);
-                screenFileDirectory = dir;
+                fd.ScreenFileDirectory = dir;
             }
         }
 
@@ -207,7 +186,7 @@ namespace MelonJSHelper
             {
                 HomeMadeEntitiesFileTextBox.Text = dir;
                 homeMadeEntitiesFile = new HomeMadeEntitiesJSFile(dir);
-                homeMadeEntitiesDirectory = dir;
+                fd.HomeMadeEntitiesDirectory = dir;
             }
         }
 
@@ -223,7 +202,7 @@ namespace MelonJSHelper
             {
                 PluginsTextBox.Text = dir;
                 pluginsFile = new PluginsFile(dir);
-                pluginsFileDirectory = dir;
+                fd.PluginsFileDirectory = dir;
             }
         }
 
@@ -343,91 +322,7 @@ namespace MelonJSHelper
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void SaveSettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            SaveSettings(resourceJSDirectory, assetDirectory, entityFilesDirectory, screenFileDirectory, homeMadeEntitiesDirectory, pluginsFileDirectory);
-        }
-
-        /// <summary>
-        /// Saves the settings.
-        /// </summary>
-        /// <param name="resource">The resource.</param>
-        /// <param name="assets">The assets.</param>
-        /// <param name="entities">The entities.</param>
-        /// <param name="screens">The screens.</param>
-        /// <param name="homeEntities">The home entities.</param>
-        /// <param name="plugins">The plugins.</param>
-        /// <returns>XDocument.</returns>
-        private XDocument SaveSettings(string resource, string assets, string entities, string screens, string homeEntities, string plugins)
-        {
-            XDocument doc = new XDocument(
-                new XDeclaration("1.0", "utf-8", "yes"),
-                new XElement("Settings",
-                    new XElement("ResourceJSDirectory", resource),
-                    new XElement("AssetDirectory", assets),
-                    new XElement("EntitiesDirectory", entities),
-                    new XElement("ScreensDirectory", screens),
-                    new XElement("HomeMadeEntitiesDirectory", homeEntities),
-                    new XElement("PluginsDirectory", plugins)));
-
-            string dir = Directory.GetCurrentDirectory();
-            doc.Save("settings.xml");
-            return doc;
-        }
-
-        /// <summary>
-        /// Reads the settings.
-        /// </summary>
-        /// <param name="resource">The resource.</param>
-        /// <param name="assets">The assets.</param>
-        /// <param name="entities">The entities.</param>
-        private void ReadSettings(string resource, string assets, string entities)
-        {
-            XDocument xDoc = new XDocument();
-            try
-            {
-                xDoc = XDocument.Load("settings.xml");
-            } catch(Exception) {
-                return;
-            }
-            IEnumerable<XElement> settings = from row in xDoc.Descendants("Settings") select row;
-
-            foreach (XElement setting in settings)
-            {
-                IEnumerable<XElement> resourceJSDirectoryList = from att in setting.Descendants("ResourceJSDirectory") select att;
-                foreach (XElement resourceJS in resourceJSDirectoryList)
-                {
-                    resourceJSDirectory = resourceJS.Value;
-                }
-
-                IEnumerable<XElement> assetDirectoryList = from att in setting.Descendants("AssetDirectory") select att;
-                foreach (XElement asset in assetDirectoryList)
-                {
-                    assetDirectory = asset.Value;
-                }
-
-                IEnumerable<XElement> entitiesDirectoryList = from att in setting.Descendants("EntitiesDirectory") select att;
-                foreach (XElement entitiesD in entitiesDirectoryList)
-                {
-                    entityFilesDirectory = entitiesD.Value;
-                }
-
-                IEnumerable<XElement> screenDirectoryList = from att in setting.Descendants("ScreensDirectory") select att;
-                foreach (XElement screenD in screenDirectoryList)
-                {
-                    screenFileDirectory = screenD.Value;
-                }
-
-                IEnumerable<XElement> homeMadeDirectoryList = from att in setting.Descendants("HomeMadeEntitiesDirectory") select att;
-                foreach (XElement entitiesD in homeMadeDirectoryList)
-                {
-                    homeMadeEntitiesDirectory = entitiesD.Value;
-                }
-
-                IEnumerable<XElement> pluginsDirectoryList = from att in setting.Descendants("PluginsDirectory") select att;
-                foreach (XElement pluginsD in pluginsDirectoryList)
-                {
-                    pluginsFileDirectory = pluginsD.Value;
-                }
-            }
+            XMLReaderWriter.SaveSettings(fd);
         }
 
         #region Properties
@@ -475,7 +370,7 @@ namespace MelonJSHelper
         {
             get
             {
-                return resourceJSDirectory;
+                return fd.ResourceJSDirectory;
             }
         }
 
@@ -487,7 +382,7 @@ namespace MelonJSHelper
         {
             get
             {
-                return screenFileDirectory;
+                return fd.ScreenFileDirectory;
             }
         }
 

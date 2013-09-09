@@ -48,7 +48,7 @@ namespace MelonJSHelper
 
             for (int j = 0; j < methodArgs.Length; j++)
             {
-                methodArgs[j].Trim();
+                methodArgs[j] = methodArgs[j].Trim();
             }
 
             name = methodBody;

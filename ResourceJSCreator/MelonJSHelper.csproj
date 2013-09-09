@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\MelonJSHelper.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -68,6 +69,7 @@
     <Compile Include="CollisionEvent.cs" />
     <Compile Include="CollisionEvents.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="FileDirectories.cs" />
     <Compile Include="JSFiles\HomeMadeEntitiesJSFile.cs" />
     <Compile Include="Lines\IfStatement.cs" />
     <Compile Include="JSFiles\IMelonJSFile.cs" />
@@ -97,6 +99,7 @@
     <Compile Include="State.cs" />
     <Compile Include="Lines\StatementLine.cs" />
     <Compile Include="Lines\UnrecognisedLine.cs" />
+    <Compile Include="XMLReaderWriter.cs" />
     <Page Include="User Controls\CreateResource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="12977558-69b1-4070-8e74-1beb237eb236" Title="MelonJSHelper Namespace" Url="html/936ed232-24b9-b3f2-eb03-591aaeb40a17.htm">
+    <HelpTOCNode Id="4a6200f7-f86e-4d84-87b0-b8f22c31905b" Title="App Class" Url="html/31a1fbce-641c-f5f6-2b1f-fc4d753f8fc8.htm">
+      <HelpTOCNode Title="App Members" Url="html/d2930b58-beaf-2248-9cb0-21ed5c414368.htm" />
+      <HelpTOCNode Title="App Constructor " Url="html/8e77b65a-4343-d8d6-c778-4c26d3279b75.htm" />
+      <HelpTOCNode Id="20cf13ba-6b34-4d1a-a96b-09fd13f1e5e4" Title="App Methods" Url="html/49a4a47e-4b2c-984d-f08d-aa7623f53c97.htm">
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/2e5f2162-c8fc-1cf2-0fd1-c4e63e1e362a.htm" />
+        <HelpTOCNode Title="Main Method " Url="html/f1b1eff6-57ad-52fe-ac01-a2c994da8ce3.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="App Properties" Url="html/207dae81-15fd-4a72-1f33-ff712b477c99.htm" />
+      <HelpTOCNode Title="App Events" Url="html/1b93b29c-b0c2-0da1-ecc1-3e90e2c6d7a9.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="aba40004-7593-4f4c-8233-13b37e9520e1" Title="AssetFile Class" Url="html/478cf3b3-aa7d-292a-70e1-8f5d0d5d8de5.htm">
+      <HelpTOCNode Title="AssetFile Members" Url="html/f54a8cb9-fd98-53b1-c241-4910b370e9a2.htm" />
+      <HelpTOCNode Title="AssetFile Constructor " Url="html/157c8220-8ad3-7e4e-b6ba-0bd9ffc3e9e0.htm" />
+      <HelpTOCNode Title="AssetFile Fields" Url="html/37427b2c-1351-c8a2-57a3-040f69873bbb.htm" />
+      <HelpTOCNode Title="AssetFile Methods" Url="html/f961238a-09f4-d0bc-d3af-611a1f2beda6.htm" />
+      <HelpTOCNode Id="303a0e14-2553-416b-8c47-73e427418664" Title="AssetFile Properties" Url="html/69e8c7b6-0e96-aa00-e9cc-981393558670.htm">
+        <HelpTOCNode Title="FileType Property " Url="html/d9a44aee-78c2-e5ef-62db-394c84983c90.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="22c5abc9-9e60-42ca-ba1d-fa8debed1980" Title="BaseFile Class" Url="html/f828325c-d1d4-53a1-459d-40a00d311cde.htm">
+      <HelpTOCNode Title="BaseFile Members" Url="html/33d1e2cf-c250-57c3-4d20-7257431c6cd5.htm" />
+      <HelpTOCNode Title="BaseFile Constructor " Url="html/d9beeffd-0006-4037-2c8e-6ba9aef45568.htm" />
+      <HelpTOCNode Id="41f114a4-2b31-4568-bced-47ce28de957a" Title="BaseFile Fields" Url="html/fbd16d36-30a8-24bb-0983-161e47e7163c.htm">
+        <HelpTOCNode Title="extension Field" Url="html/2bebc45d-47e7-6c84-d47f-62b32db923ca.htm" />
+        <HelpTOCNode Title="fileName Field" Url="html/e4236e86-f4bc-5033-e4fb-a73579be4c43.htm" />
+        <HelpTOCNode Title="relativeDirectory Field" Url="html/18ee68b6-5f82-a3ed-4531-38d6e93785b8.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="1d34f9bd-aa61-42e3-ae25-44d6076305fc" Title="BaseFile Methods" Url="html/9d5efd2c-59dd-143a-7d33-d3578a7a82a5.htm">
+        <HelpTOCNode Title="ReadFile Method " Url="html/5d78a78f-5963-7138-4695-a67ad1b8d13b.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6f52fd2c-54fd-427f-8757-73e5e9cc34c6" Title="BaseFile Properties" Url="html/a2948e50-27bb-75dc-a14b-1f82812bca7c.htm">
+        <HelpTOCNode Title="FileName Property " Url="html/0bd62a80-24f6-6b6f-529a-3992db381bf7.htm" />
+        <HelpTOCNode Title="FileRelativePath Property " Url="html/da516536-2959-bc2a-7a9d-b1d751f4838d.htm" />
+        <HelpTOCNode Title="FolderRelativePath Property " Url="html/e4763391-196c-f31d-a3df-33f0561b694d.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="42f39855-20f7-4a30-8478-31dc8557b152" Title="Code Class" Url="html/26f33e59-9061-665e-4d85-473d9a5aa684.htm">
+      <HelpTOCNode Title="Code Members" Url="html/784076ff-748c-a41c-ef84-c16dc9d045e6.htm" />
+      <HelpTOCNode Title="Code Constructor " Url="html/e637e90e-cb83-914d-d004-b159c7dd86e4.htm" />
+      <HelpTOCNode Id="2d689e59-fd8e-434c-81c4-d1d43e613fc5" Title="Code Methods" Url="html/476558aa-d778-3705-f646-131fd2b61a4d.htm">
+        <HelpTOCNode Title="FetchClassMethodRange Method " Url="html/508e3152-6e81-6430-e0d9-b1ab5ee89ece.htm" />
+        <HelpTOCNode Title="FetchMethodRange Method " Url="html/4262650e-6781-4bef-4515-100f644aa4d9.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9f02adac-a2bc-4738-b697-8b62f19d74a2" Title="CodeBlock Class" Url="html/c44d7a3b-ee60-c53b-5ba3-839f2dd675b9.htm">
+      <HelpTOCNode Title="CodeBlock Members" Url="html/5fbf915b-8876-6ac6-e9fd-67a5f7064a7e.htm" />
+      <HelpTOCNode Title="CodeBlock Constructor " Url="html/3ff6e052-bb72-5bbc-f67c-169eb8d9b078.htm" />
+      <HelpTOCNode Id="29a129eb-166d-432f-8350-041c7f16d202" Title="CodeBlock Methods" Url="html/e5d4d904-176d-a585-2765-d482f7fbee59.htm">
+        <HelpTOCNode Title="AddCodeBlock Method " Url="html/44fed0be-f1ff-711e-c9de-6128593d19c7.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/2a86d8ac-5cea-9af3-033e-bf2d127d003d.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="233b4de5-abc0-4225-b76c-83ff865ad37a" Title="CodeBlock Properties" Url="html/ffd0734d-b751-ab46-3fe9-16534ec7be78.htm">
+        <HelpTOCNode Title="CodeBlocks Property " Url="html/dac43ad1-98de-2ec2-d397-66033174a79b.htm" />
+        <HelpTOCNode Title="Line Property " Url="html/eff65105-eb90-8a00-5c66-87a9049f0575.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ee4704cf-514c-4910-8a1e-0f670af4ab78" Title="CreateResource Class" Url="html/8629b52f-3193-150c-79f1-97628bc0258a.htm">
+      <HelpTOCNode Title="CreateResource Members" Url="html/d7a62dcc-7831-b30a-4fef-8dbdeb060950.htm" />
+      <HelpTOCNode Title="CreateResource Constructor " Url="html/9d1ab06d-4360-078b-a166-5a63c044e010.htm" />
+      <HelpTOCNode Id="4f3bc9c9-7194-4d13-abe5-240dbf47d83f" Title="CreateResource Methods" Url="html/17432aed-84ea-7281-1524-85bb9be2886d.htm">
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/5776dfce-ea81-9125-6b04-87df90d51174.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="CreateResource Properties" Url="html/6e476a97-6c5b-71aa-e1ec-beefb7abe58c.htm" />
+      <HelpTOCNode Title="CreateResource Events" Url="html/96bce231-969e-726b-eff2-d0d2f04ce5be.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="4367c39b-dc4d-4ade-b118-d78fb865cef8" Title="Entity Class" Url="html/09b86db1-39d7-8e4b-f470-8578fb0594b2.htm">
+      <HelpTOCNode Title="Entity Members" Url="html/dd84cba8-c3cf-d97e-a9be-290fc9b38726.htm" />
+      <HelpTOCNode Title="Entity Constructor " Url="html/b31711d0-0fc4-d030-0cdd-300614caf98e.htm" />
+      <HelpTOCNode Title="Entity Fields" Url="html/5d482911-0e85-c2f6-6b47-da243fecaccf.htm" />
+      <HelpTOCNode Title="Entity Methods" Url="html/2a91c11f-af4e-3d79-75dd-88c42208828d.htm" />
+      <HelpTOCNode Id="f2f99bf7-49d7-45f0-8856-730c304ecd1c" Title="Entity Properties" Url="html/8ed6036b-f811-d6e1-0ab5-cc36e36c5b70.htm">
+        <HelpTOCNode Title="AlwaysUpdate Property " Url="html/57756772-a729-5d50-5a93-8cb3f3e8d1ab.htm" />
+        <HelpTOCNode Title="FollowDirection Property " Url="html/61ba8b87-f024-bfc1-ad09-29528c1151b6.htm" />
+        <HelpTOCNode Title="Gravity Property " Url="html/c29e8a1f-ebde-44cf-d13f-93c8c69c2fd8.htm" />
+        <HelpTOCNode Title="Visible Property " Url="html/dd685d4f-296b-f700-d482-fc5874ce270a.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="0a4a05ad-f4a1-4d43-91d0-3a2f8d4b0bf7" Title="EntityCreator Class" Url="html/d8b1f0eb-69f2-4430-3077-c2aa8513d363.htm">
+      <HelpTOCNode Title="EntityCreator Members" Url="html/584da121-c15e-3840-ce87-9bdb77a5e26a.htm" />
+      <HelpTOCNode Title="EntityCreator Constructor " Url="html/a0aceec0-a2c0-eed5-bf25-f66dc68c4dfd.htm" />
+      <HelpTOCNode Id="7d8aec26-c503-4549-9236-53459df5cd92" Title="EntityCreator Methods" Url="html/621049ec-557e-ee22-6654-c6dd31a83204.htm">
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/147e06b4-eb8f-9435-2274-d9410e48722a.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="EntityCreator Properties" Url="html/1e1b061f-2bc6-f1d9-957c-72a29e9a9511.htm" />
+      <HelpTOCNode Title="EntityCreator Events" Url="html/60698767-abb5-72ef-1960-b247f0f6ea33.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="f2d78c87-4721-49c3-91ed-e437b6cfba2e" Title="EntityJSFile Class" Url="html/0b88a04f-0ddf-3d9b-db1c-6eb5ee7342bd.htm">
+      <HelpTOCNode Title="EntityJSFile Members" Url="html/0ef436b9-5cc7-5a2a-e44e-eeb7cf1461d1.htm" />
+      <HelpTOCNode Title="EntityJSFile Constructor " Url="html/b99bfaf2-9dc4-6475-aec6-4d54e6e1447c.htm" />
+      <HelpTOCNode Title="EntityJSFile Fields" Url="html/30d02421-0ea9-4e4b-d3a7-df806de8f5c9.htm" />
+      <HelpTOCNode Title="EntityJSFile Methods" Url="html/c222f2d9-f2b8-7156-5616-ae9a0b739409.htm" />
+      <HelpTOCNode Id="2c8346eb-3ee1-489d-b06f-00d4a406a425" Title="EntityJSFile Properties" Url="html/c90bf32c-87e6-5acb-04db-126e2b31850b.htm">
+        <HelpTOCNode Title="GameObjectNames Property " Url="html/f8bff73c-0065-7d0b-c5a9-72c0b7a4884e.htm" />
+        <HelpTOCNode Title="GameObjects Property " Url="html/6b8290c6-356b-b502-d5c6-d8a429de9230.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5c0a78fa-6d19-4dac-8e97-be41b3a7f15c" Title="HomeMadeEntitiesJSFile Class" Url="html/6fab5b2f-861f-b484-cf99-df681cc77f14.htm">
+      <HelpTOCNode Title="HomeMadeEntitiesJSFile Members" Url="html/1143b01f-16c7-46c1-7efa-b95f790224a3.htm" />
+      <HelpTOCNode Title="HomeMadeEntitiesJSFile Constructor " Url="html/e46ec40d-3633-8e7c-6846-cacfe05e2c7b.htm" />
+      <HelpTOCNode Title="HomeMadeEntitiesJSFile Fields" Url="html/34df68fa-2157-5239-69f5-e90c6d61f968.htm" />
+      <HelpTOCNode Title="HomeMadeEntitiesJSFile Methods" Url="html/5e614f7c-7fe1-6d0f-2e25-f95b734c0fcf.htm" />
+      <HelpTOCNode Id="06897e3b-89c6-424e-9927-82fdc34eed74" Title="HomeMadeEntitiesJSFile Properties" Url="html/8bd0d1b8-befd-930d-78bf-bc5f94cfc86f.htm">
+        <HelpTOCNode Title="Entities Property " Url="html/bc7a999a-3542-2b73-839a-87dda7be83b3.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="11129a26-e862-4d4c-be4d-57b73160df8c" Title="IfStatement Class" Url="html/95a5e8c5-f539-6fff-fa35-2aa85a86266b.htm">
+      <HelpTOCNode Title="IfStatement Members" Url="html/38ea0364-39c0-1f50-1f9d-66ff749629e4.htm" />
+      <HelpTOCNode Title="IfStatement Constructor " Url="html/052aee21-f243-0f54-a111-79b07c34722b.htm" />
+      <HelpTOCNode Id="29db0f9f-5b58-4b3e-b892-758cd4065dba" Title="IfStatement Methods" Url="html/83f4da12-a366-cf5d-e0ca-5172b685397c.htm">
+        <HelpTOCNode Title="AddLine Method " Url="html/a6c96ef1-9bd4-dde8-5106-99d54b0e6ba3.htm" />
+        <HelpTOCNode Title="IsRecognisedIfStatement Method " Url="html/bc642677-1eb6-3ed5-02bb-e61449a6d325.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/7353737c-8a61-aecf-d632-144f48fab620.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="66b0f97e-6b18-45fb-b131-a5d8bc587d17" Title="IfStatement Properties" Url="html/860ba8ee-17e0-04e1-e106-6caace2ca8ca.htm">
+        <HelpTOCNode Title="Body Property " Url="html/318d3fb6-27ef-0f10-823c-1663060ed547.htm" />
+        <HelpTOCNode Title="Condition Property " Url="html/294d715c-c3db-459e-3f03-96bfaf6fa521.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="30c8055c-efc5-4a16-8c66-efaa11db7a03" Title="ILine Interface" Url="html/8d6443a0-0cbb-a9e3-8a45-4d6c4d3b8688.htm">
+      <HelpTOCNode Title="ILine Members" Url="html/9b61f203-bb7c-f2de-e2b7-eaf6a8cf80e4.htm" />
+      <HelpTOCNode Id="69d00109-3467-4355-bee0-b8c8de165d90" Title="ILine Properties" Url="html/a8041aef-2860-bf70-3579-bf972e3a543c.htm">
+        <HelpTOCNode Title="Body Property " Url="html/c1d2e0e5-e2ef-c273-eee3-bbbddf375f70.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d22f37ea-dae1-4ca5-9dc6-e105e1f45d0e" Title="IMelonJSFile Interface" Url="html/e2f80c26-e7fc-f290-9dea-9a79944e0a33.htm">
+      <HelpTOCNode Title="IMelonJSFile Members" Url="html/67a41f02-882a-6e70-3c27-a5e27f5c7e23.htm" />
+      <HelpTOCNode Id="e46a471e-f2cc-4663-bb97-5b574d8a5fd2" Title="IMelonJSFile Methods" Url="html/c0a61d05-0eca-cf8a-a20f-482a3e1acd3a.htm">
+        <HelpTOCNode Title="ReadFile Method " Url="html/8e777885-81e2-dfcb-7c5d-07edde0eb6e9.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f9e447eb-3303-4b76-af48-6aeab6805d58" Title="MainWindow Class" Url="html/fcb4a7fc-8367-fc80-48f5-205fb0e6c848.htm">
+      <HelpTOCNode Title="MainWindow Members" Url="html/897f7a31-5f9e-76f2-cffb-c5830fd860b5.htm" />
+      <HelpTOCNode Title="MainWindow Constructor " Url="html/45285967-e6cd-9b73-058b-ca9140d5c7b4.htm" />
+      <HelpTOCNode Id="ac3282ee-151f-4794-8676-35353f5f3009" Title="MainWindow Methods" Url="html/669a4d13-c5a7-2c11-c481-e3bcfd813fe0.htm">
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/30ed5fe9-f847-bd1e-6247-7488ad643b71.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="MainWindow Properties" Url="html/60747683-5764-c10e-64b2-e8269ec9bf9c.htm" />
+      <HelpTOCNode Title="MainWindow Events" Url="html/66728a1f-8718-2707-3d87-d05ab073f099.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="c5254099-c383-4e75-a08f-be7723842e4f" Title="MelonJSFile Class" Url="html/a909599b-f2fe-21d4-d888-53091f0a9a82.htm">
+      <HelpTOCNode Title="MelonJSFile Members" Url="html/6a428eb7-ee84-6c03-6339-8c8e51bcc580.htm" />
+      <HelpTOCNode Title="MelonJSFile Constructor " Url="html/89644ed7-eb52-bcab-fa16-df53ca4d1e27.htm" />
+      <HelpTOCNode Title="MelonJSFile Fields" Url="html/39cfe104-9723-8416-2755-ac94e179bf91.htm" />
+      <HelpTOCNode Id="85adf95e-f175-4cbd-a19d-c609ce1b8f42" Title="MelonJSFile Methods" Url="html/236a6c9d-172e-16a1-e5c6-87487b1a5708.htm">
+        <HelpTOCNode Title="CheckAndAddMethod Method " Url="html/0b83db44-7aec-7356-b63d-11fe5e694deb.htm" />
+        <HelpTOCNode Title="CheckBracketInString Method " Url="html/90e49483-8765-ef4b-cd5a-d95b52332844.htm" />
+        <HelpTOCNode Title="MatchesMelonMethodSignature Method " Url="html/8c9f1da1-f4de-65c4-6e6a-f56b98421cee.htm" />
+        <HelpTOCNode Title="ReadFile Method " Url="html/864ca368-6140-22e4-41cb-0828f72ca46f.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="MelonJSFile Properties" Url="html/8e96a798-ed88-bd5a-ef39-103ed2fdc54c.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="46b96bff-d00d-4fee-80d1-d1062965c579" Title="MelonJSObject Class" Url="html/e957af77-d4f7-3c5f-a945-19ce0d291e8b.htm">
+      <HelpTOCNode Title="MelonJSObject Members" Url="html/c8487779-bd9f-d285-a5f9-4ffa643ad022.htm" />
+      <HelpTOCNode Title="MelonJSObject Constructor " Url="html/38081cdd-2e6a-54d8-e27b-0b19010b6ece.htm" />
+      <HelpTOCNode Id="f955c58a-45a3-4e5c-b019-bd3715444dae" Title="MelonJSObject Fields" Url="html/71dbd0ba-04fe-c193-1466-4402805af324.htm">
+        <HelpTOCNode Title="baseClass Field" Url="html/7f8eb807-a145-04aa-59aa-be118e472f6b.htm" />
+        <HelpTOCNode Title="methods Field" Url="html/90b482cb-048a-52a7-c754-9db284462dc4.htm" />
+        <HelpTOCNode Title="name Field" Url="html/de423400-12a6-db45-d04f-f0917c008e4b.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b6f692e6-e89c-4b52-8996-151c67ce1c02" Title="MelonJSObject Methods" Url="html/a47259bb-4b60-cf34-bf62-e4c1a34a5ca9.htm">
+        <HelpTOCNode Title="AddMethodFromString Method " Url="html/48ce230c-f4e2-38a3-662b-44d54ac71cfd.htm" />
+        <HelpTOCNode Title="GetLine Method " Url="html/5813e264-7dbf-d1f4-83af-9f0b0ac40eb0.htm" />
+        <HelpTOCNode Title="GetMethod Method " Url="html/4ed13bc4-9c1c-60ae-94f3-95a04eb6c400.htm" />
+        <HelpTOCNode Title="GetMethodLine Method " Url="html/9deb5654-8994-a661-f067-1c1bc8236b0d.htm" />
+        <HelpTOCNode Title="GetMethodLineArguments Method " Url="html/53e483ae-46de-f345-ddfc-e99dc16dc98f.htm" />
+        <HelpTOCNode Title="GetStatementsLine Method " Url="html/76214d7c-96aa-e861-3403-05b23f2de57a.htm" />
+        <HelpTOCNode Title="GetStatementValue Method " Url="html/b14ab681-15ab-7b32-add8-7888856bb9c4.htm" />
+        <HelpTOCNode Title="SetMethodLineArgument Method " Url="html/43e24f27-78ba-8157-140b-56310d9a18db.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4f70ac5c-37ba-4f06-9c36-0077b9ff1f49" Title="MelonJSObject Properties" Url="html/6ff01c15-baa8-435e-695b-68d93653b7a3.htm">
+        <HelpTOCNode Title="BaseClass Property " Url="html/252c49ff-5274-7f22-5115-d1dc88a6092a.htm" />
+        <HelpTOCNode Title="Methods Property " Url="html/66a59859-2934-c0c6-524e-14d65e3343c9.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/4a4317ef-34ed-60cf-b0ed-e878dad29965.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="283ecb49-6c5b-43b9-b8bd-23bc7df1913c" Title="Method Class" Url="html/9dc8c80e-4a02-e86e-85ba-25c405222f6c.htm">
+      <HelpTOCNode Title="Method Members" Url="html/e43b012b-09fd-fa81-f97a-27f898031cbf.htm" />
+      <HelpTOCNode Title="Method Constructor " Url="html/9bb62840-58a6-9aa6-435e-a991bdb99ee6.htm" />
+      <HelpTOCNode Id="35a2bec7-7e41-4a76-a4e0-88891edc5f9f" Title="Method Methods" Url="html/3a898fc3-e607-6375-37fa-2ceda52cdd44.htm">
+        <HelpTOCNode Title="AddLine Method " Url="html/08cb7034-da89-b927-8078-495497a99b6a.htm" />
+        <HelpTOCNode Title="ArgumentToString Method " Url="html/1ce96a0d-fe71-8622-edbb-2d3f4cd818a8.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/5efd7386-90d1-f583-ef3c-15d34cfc7d39.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="37595081-420c-4259-b8c4-aaea7f14a180" Title="Method Properties" Url="html/6aadafb0-803d-180e-aa45-ca2a20cc7fd7.htm">
+        <HelpTOCNode Title="Arguments Property " Url="html/147fb1e1-3e4b-10d0-7c65-b83f4f6c37b7.htm" />
+        <HelpTOCNode Title="Lines Property " Url="html/56ade9c6-ca37-b162-8958-e28a440d78ad.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/798db506-6ce5-77fd-3ed3-bcf987413983.htm" />
+        <HelpTOCNode Title="Signature Property " Url="html/58f1d6fa-0306-d4b2-061f-918297978adb.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="827cb00d-3e79-47dc-ab58-8a15ade5d0fe" Title="MethodLine Class" Url="html/86021725-99c5-7263-f107-6d3eb8128ae5.htm">
+      <HelpTOCNode Title="MethodLine Members" Url="html/a3ab3efe-c8e2-db35-77df-d92bcdc6bd19.htm" />
+      <HelpTOCNode Id="d32df435-5cba-44ee-9b5d-93b2c4880e8a" Title="MethodLine Constructor " Url="html/08f94ad7-943f-ae82-f2ca-52eceb4b177c.htm">
+        <HelpTOCNode Title="MethodLine Constructor (String, Int32)" Url="html/7b294fc8-bf4e-e8cb-9c61-888af765064b.htm" />
+        <HelpTOCNode Title="MethodLine Constructor (String, String[])" Url="html/065f882c-d67a-7dfa-b567-d7dc6b05adf4.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="ebfb0012-aba7-40d0-950c-8f247ce1c422" Title="MethodLine Methods" Url="html/18a8c444-c50e-703a-3378-03bf48ae4dc6.htm">
+        <HelpTOCNode Title="IsRecognisedMethodLine Method " Url="html/226a06bd-88ac-11f7-641c-21cbb6b8a6f4.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/908d6e6d-b1ef-3555-4bf6-a07ec7bbf90d.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="ec4a208b-b2e3-46ae-a116-7cd97fcf7ccd" Title="MethodLine Properties" Url="html/43d3df40-6d96-745e-61ff-2f2d904a20d7.htm">
+        <HelpTOCNode Title="Arguments Property " Url="html/b45eec4e-0300-feb1-c081-f2fc0e19368e.htm" />
+        <HelpTOCNode Title="Body Property " Url="html/a488b049-a247-59c4-1043-2eaae9331f2e.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ab05dfb4-d02e-4ada-a7e7-9061568de0be" Title="NewMethod Class" Url="html/de679a86-272c-a183-3653-57e6c09c4225.htm">
+      <HelpTOCNode Title="NewMethod Members" Url="html/7db6819a-3721-4499-fd32-efb18c3f6b76.htm" />
+      <HelpTOCNode Title="NewMethod Constructor " Url="html/b6f11d86-77ea-ae95-f477-a1695376e39b.htm" />
+      <HelpTOCNode Id="991fcf16-fee9-4a83-973f-1e8402553ebd" Title="NewMethod Methods" Url="html/7cb2871b-612d-79d4-3266-e076671de93a.htm">
+        <HelpTOCNode Title="AddCodeBlock Method " Url="html/cd057d01-6200-f195-216c-43518c78b575.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/88f9fa95-501e-5bc2-8ff1-8ffc0bf2bc6d.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="74ad2333-2c24-45ca-9e2b-c409f9d5bf5a" Title="NewMethod Properties" Url="html/5039bd42-8717-cb8d-6d2b-95c77b084cb1.htm">
+        <HelpTOCNode Title="Arguments Property " Url="html/52e8410e-f682-1c71-19f2-ccecb6654f8d.htm" />
+        <HelpTOCNode Title="CodeBlocks Property " Url="html/1cbfcbb3-23e1-5c4c-6ddf-5e06bb84c6d4.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/3c8f36d6-b83c-a4d5-731f-c02852d49b5d.htm" />
+        <HelpTOCNode Title="Signature Property " Url="html/dc4e4dc9-581f-29bf-5bae-6eeff86f14f8.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b5d828aa-31b0-42f8-a7e2-65cc4726f47c" Title="Plugin Class" Url="html/5775a3df-065d-158e-e621-45bab2292bfa.htm">
+      <HelpTOCNode Title="Plugin Members" Url="html/f58b5d79-b6ff-dffc-a0f4-5e173dfa5fdc.htm" />
+      <HelpTOCNode Title="Plugin Constructor " Url="html/caaaa15e-fe4b-15ba-191f-7b4b5aeca507.htm" />
+      <HelpTOCNode Title="Plugin Fields" Url="html/87c38099-fa26-370c-6d4e-a53aff6d2526.htm" />
+      <HelpTOCNode Id="0363c4be-7736-4580-b321-2887a7acfb83" Title="Plugin Methods" Url="html/14a04af9-9a88-0e94-42b8-91066c28a397.htm">
+        <HelpTOCNode Id="626ff9c1-ba2b-4c2b-9dc3-45ed11b29553" Title="AddMethodFromString Method " Url="html/2cb59bb3-e97e-0c3c-bb23-907938361743.htm">
+          <HelpTOCNode Title="AddMethodFromString Method (List(String))" Url="html/4e9039c7-17b5-2e30-54a9-d11738e26e53.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ToString Method " Url="html/dd552abb-0950-a9c7-3fcc-f644420ff1ed.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="256d2f30-52c4-4282-8b7e-2d5099af604a" Title="Plugin Properties" Url="html/f0664ea1-5e87-2c93-7310-03ff36991f4a.htm">
+        <HelpTOCNode Title="MethodPatched Property " Url="html/737dfd97-f65d-96bb-72da-65d523e31bf5.htm" />
+        <HelpTOCNode Title="Methods Property " Url="html/bd03fac3-135e-2a08-094f-908aba4958b8.htm" />
+        <HelpTOCNode Title="ObjectPatched Property " Url="html/23073e7b-6227-69e7-5bda-a128948a76a5.htm" />
+        <HelpTOCNode Title="Version Property " Url="html/2c268ceb-dd4a-b4cc-c73e-16a080d4c1e6.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="2a125593-9476-43fc-bd9d-870e15427137" Title="PluginsCreator Class" Url="html/885ac3f0-010d-584b-f70c-0f30bcd013a4.htm">
+      <HelpTOCNode Title="PluginsCreator Members" Url="html/06beb256-a032-3880-ec2b-22eeef6f157a.htm" />
+      <HelpTOCNode Title="PluginsCreator Constructor " Url="html/d28b8161-7147-7d3b-f747-c7052f350b2f.htm" />
+      <HelpTOCNode Id="2668b6cb-5f6b-413c-85a3-9432b1fa4b1f" Title="PluginsCreator Methods" Url="html/4f52dcf5-fea6-08b9-f68f-76c1a0f6bcc4.htm">
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/dff18b20-b805-9c28-883f-eb0fb55e6454.htm" />
+        <HelpTOCNode Title="RefreshControls Method " Url="html/d9559a61-6ee3-980c-3572-a26024b72f82.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="PluginsCreator Properties" Url="html/e2c5dd43-c1d0-6789-1a04-9174bb457249.htm" />
+      <HelpTOCNode Title="PluginsCreator Events" Url="html/9e9d8733-e8c5-8245-07b1-03406613cf1f.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="e4eb4a4e-9f5e-4781-b650-589fae1ee7a5" Title="PluginsFile Class" Url="html/9e13217d-b439-9b28-fac3-44bc55dfad02.htm">
+      <HelpTOCNode Title="PluginsFile Members" Url="html/d0c26f68-67b5-6726-2582-c052f234fe03.htm" />
+      <HelpTOCNode Title="PluginsFile Constructor " Url="html/49be9c6b-81af-1c34-225a-fa1514ab93c4.htm" />
+      <HelpTOCNode Title="PluginsFile Fields" Url="html/ac40170b-3c6e-cc36-6469-185021402673.htm" />
+      <HelpTOCNode Id="342d0f1d-e018-4f21-a641-95a2c7398569" Title="PluginsFile Methods" Url="html/02a8c011-835e-a89a-074d-540132f1f13e.htm">
+        <HelpTOCNode Title="CreateJSFile Method " Url="html/4b04f043-a923-0d61-da94-abe10d5ad567.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="09b04c20-39d3-4f47-b20e-04f35c0e2618" Title="PluginsFile Properties" Url="html/3d0a70af-d5f6-32f5-7705-4abcecb0b4db.htm">
+        <HelpTOCNode Title="Plugins Property " Url="html/4a39a3b8-0cc6-164c-6d89-85821dabc125.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1c11833e-28c6-499c-89ac-368e02964d52" Title="Screen Class" Url="html/d0ab22d5-781e-e541-ddb3-e6279ef64758.htm">
+      <HelpTOCNode Title="Screen Members" Url="html/31ea45ab-a641-1f09-9325-cb70b80b75c6.htm" />
+      <HelpTOCNode Title="Screen Constructor " Url="html/fcabf25d-13a6-baf8-454f-ed063fb66b4e.htm" />
+      <HelpTOCNode Title="Screen Fields" Url="html/8746f46a-d1ba-dd13-13bc-384f2eaeaa85.htm" />
+      <HelpTOCNode Id="f95fd178-84f4-417a-b1b0-05999a86bb1e" Title="Screen Methods" Url="html/73f4f2f1-2f56-59d4-a610-b2fd3c134643.htm">
+        <HelpTOCNode Title="GetSetStateString Method " Url="html/3a22fe55-5ef2-730c-ba32-3aa9aa8eb912.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/cc13f1e1-dbc1-348a-3022-59b13a8c248f.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5dfaa32a-46b2-49bc-94bd-ebc2b13589d0" Title="Screen Properties" Url="html/5240aab6-76c1-b2a2-d5aa-cd48d136528a.htm">
+        <HelpTOCNode Title="Level Property " Url="html/16a8182d-5fd1-181e-67bb-928cd1c17915.htm" />
+        <HelpTOCNode Title="State Property " Url="html/a2f25657-282b-725e-1475-3752c57c0f41.htm" />
+        <HelpTOCNode Title="VariableLevel Property " Url="html/a2be173a-2dfd-a07e-6ab7-91a333e2bd80.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="6a8a7f13-5bf8-492e-b1f7-10a76af20931" Title="ScreenManager Class" Url="html/a9a32646-5247-8fa4-4776-431e8b8d1c39.htm">
+      <HelpTOCNode Title="ScreenManager Members" Url="html/ca5433d0-6b99-55de-3ca4-a22a0c465ef7.htm" />
+      <HelpTOCNode Title="ScreenManager Constructor " Url="html/997dada8-a6a6-63e5-0bb9-aecfd579992b.htm" />
+      <HelpTOCNode Id="7fdcb882-6c8d-40e0-bfb9-37b8521c2e3f" Title="ScreenManager Methods" Url="html/44ab6411-b387-86d5-ebc8-33c094851e08.htm">
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/ed250583-ca3c-1e75-2901-333ace87fb1e.htm" />
+        <HelpTOCNode Title="OnLoad Method " Url="html/2ae082e0-1fd6-3f7c-ae73-d6cc6b050146.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ScreenManager Properties" Url="html/486b5298-7ffe-bb0b-c8ef-8b26fe2db776.htm" />
+      <HelpTOCNode Title="ScreenManager Events" Url="html/4471790f-dbfc-9bcb-2bd4-ee95b52e350a.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="8eb8ac4b-232d-45ab-96c2-338392033662" Title="ScreensFile Class" Url="html/9324f191-5828-63aa-54ca-11a26b43e0b6.htm">
+      <HelpTOCNode Title="ScreensFile Members" Url="html/ca80d26e-61ac-97c4-49e8-165b31554221.htm" />
+      <HelpTOCNode Title="ScreensFile Constructor " Url="html/bf1346ba-7c5b-6409-c87f-05a667ae451d.htm" />
+      <HelpTOCNode Title="ScreensFile Fields" Url="html/4f3706d3-2c57-3633-d38b-cef186537f07.htm" />
+      <HelpTOCNode Id="c87cc215-571c-4dc7-81b9-686ea207889a" Title="ScreensFile Methods" Url="html/f1df094b-591b-0377-c4b2-c443980b86e3.htm">
+        <HelpTOCNode Title="CreateJSFile Method " Url="html/6bb22ab6-182f-6879-e007-11cf233f7f8f.htm" />
+        <HelpTOCNode Title="ReadFile Method " Url="html/0cdf6f45-46a5-160c-c006-f4ee9e80a6dc.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="16d6faa8-396f-4d9f-af67-a990d1804153" Title="ScreensFile Properties" Url="html/47b57401-46b0-1565-64b8-dd6390d49bbe.htm">
+        <HelpTOCNode Title="Screens Property " Url="html/f98bf1e7-ec40-2722-722b-a0069f07d5d5.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="826ab602-c315-4ce6-956d-e41074333e1b" Title="Settings Class" Url="html/5597e883-4a9d-e6db-5102-8ea0d17cf54f.htm">
+      <HelpTOCNode Title="Settings Members" Url="html/dd9ad6aa-fdb3-55d0-9ebe-ec847a8f5dfd.htm" />
+      <HelpTOCNode Title="Settings Constructor " Url="html/3b64c213-7dc7-21c7-2898-4e53e76ce79d.htm" />
+      <HelpTOCNode Id="81695fff-a9f0-4ca9-8b5b-28e344c3121a" Title="Settings Methods" Url="html/d707d12b-5114-7ddc-73a0-187f57532c58.htm">
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/bc40d46b-1d52-7fe5-a7c1-fd212c8d63dd.htm" />
+        <HelpTOCNode Title="OnLoad Method " Url="html/6ad94e3f-aafd-3617-06ca-a2203ccdd2f3.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="13995b47-08b8-4075-86f4-c2162e7c7727" Title="Settings Properties" Url="html/e6758770-5ce9-6068-b6cd-e28e8b45f37b.htm">
+        <HelpTOCNode Title="AssetFiles Property " Url="html/23abde8c-0eea-b1f9-b436-31accd55839a.htm" />
+        <HelpTOCNode Title="EntityFiles Property " Url="html/10d18cbe-1625-dc9a-c788-cb9bbe15a3c1.htm" />
+        <HelpTOCNode Title="EntityNames Property " Url="html/d275fdf8-e3dd-d238-d108-68c31794c207.htm" />
+        <HelpTOCNode Title="HomeMadeEntities Property " Url="html/aa7c13a4-f899-b08c-ce73-db20483aa3b6.htm" />
+        <HelpTOCNode Title="HomeMadeEntitiesFile Property " Url="html/0c4d9a5d-5e7e-075b-680f-78bf1cdb6d72.htm" />
+        <HelpTOCNode Title="Plugins Property " Url="html/c9c3c2bf-1996-2db9-e033-dd2ce63bc874.htm" />
+        <HelpTOCNode Title="PluginsFile Property " Url="html/101a499c-90f8-0253-e757-bcc84db708e9.htm" />
+        <HelpTOCNode Title="ResourceJSDirectory Property " Url="html/284364b7-19aa-e12b-496d-7bb7b1c83582.htm" />
+        <HelpTOCNode Title="ScreenFileDirectory Property " Url="html/6de5a75e-142b-fb77-03b5-096a8e07b4c6.htm" />
+        <HelpTOCNode Title="Screens Property " Url="html/7fbdb650-63ca-9788-9df3-ee7e0a46fe83.htm" />
+        <HelpTOCNode Title="ScreensFile Property " Url="html/d21b5ec5-fa2e-44c4-86d9-6c03c9fb838f.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Settings Events" Url="html/a66f44db-03dd-13c0-b17c-a7ed06dc5169.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="668c0804-f061-4e4c-94f2-62dd0f5f7729" Title="State Class" Url="html/a1e5d6a8-1826-81e4-e775-878fbae318c2.htm">
+      <HelpTOCNode Title="State Members" Url="html/9d4c530b-b843-f3b5-cfff-716d3ee06ceb.htm" />
+      <HelpTOCNode Title="State Constructor " Url="html/a2a9f3d5-1de8-c0e6-22af-cf8bce5a72bd.htm" />
+      <HelpTOCNode Id="5ee4b22a-9ed0-4b0b-865c-0db3a9a5549a" Title="State Methods" Url="html/0bcb2f52-b762-bb12-f289-012bdb5ada09.htm">
+        <HelpTOCNode Title="ToString Method " Url="html/5ee6e0f5-e138-ba2d-9f62-e7715258e40a.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d8ee7ed7-754b-4362-b573-2123ee360b07" Title="State Properties" Url="html/f8a6a07f-6add-9e29-cae2-5b276d75e96b.htm">
+        <HelpTOCNode Title="Name Property " Url="html/ee14a18c-5d37-66dc-f227-8aa6e6c54631.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d7a8aef3-ab4c-4fb2-9063-31891b85a846" Title="StatementLine Class" Url="html/acc387fc-c648-2690-ed76-a38943036031.htm">
+      <HelpTOCNode Title="StatementLine Members" Url="html/e6f356e1-91fb-1d06-533e-ed496c47dbd9.htm" />
+      <HelpTOCNode Title="StatementLine Constructor " Url="html/353fb8e6-f41b-d751-69a3-b49d50d4f3bc.htm" />
+      <HelpTOCNode Id="d97b4b04-b0d1-4e57-9900-b780425242a9" Title="StatementLine Methods" Url="html/148a6870-1c5a-1abc-d24f-72520588ae85.htm">
+        <HelpTOCNode Title="IsRecognisedStatementLine Method " Url="html/5be8c2d5-3993-36af-e7d6-8f2bfe5221cc.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/2a5d5477-dbb4-3f83-f0fd-e424ae172167.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="cd1e47cb-e84b-4735-ac6a-7f1b83e46d99" Title="StatementLine Properties" Url="html/48ac2070-78e8-12f7-5844-0e1901c28419.htm">
+        <HelpTOCNode Title="Body Property " Url="html/e1896e9b-b633-8500-9580-e588d0db16b9.htm" />
+        <HelpTOCNode Title="Value Property " Url="html/0f62b891-ce46-1ca5-e60c-7dac4a50d096.htm" />
+        <HelpTOCNode Title="Variable Property " Url="html/f44e7eac-d3d9-9f43-4910-7aaad3b26c96.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
