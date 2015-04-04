@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="backgroundcolor" value="#C77F97"/>
+ </properties>
+ <objectgroup name="buttons" width="50" height="50">
+  <object name="StateButton" x="205" y="319" width="210" height="68">
+   <properties>
+    <property name="centreX" value="true"/>
+    <property name="colour" value="#2F5AA1"/>
+    <property name="state" value="LEVELSELECT"/>
+    <property name="text" value="PLAY"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="logo" width="50" height="50">
+  <object name="BobbingLogo" x="194" y="33" width="266" height="224">
+   <properties>
+    <property name="image" value="mainScreenLogo"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

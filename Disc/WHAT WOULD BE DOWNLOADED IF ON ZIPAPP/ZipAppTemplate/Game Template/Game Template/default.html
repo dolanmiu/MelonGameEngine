@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Game Template</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <script src="/js/default.js"></script>
+</head>
+<body>
+    <div id="content">
+        <div id="screen"></div>
+        <script type="text/javascript" src="js/core/melonJS-0.9.8.js"></script>
+        <script type="text/javascript" src="js/core/underscore.js"></script>
+        <script type="text/javascript" src="js/core/debugPanel.js"></script>
+        <script type="text/javascript" src="js/core/illuminated.js"></script>
+        <script type="text/javascript" src="js/resources.js"></script>
+        <script type="text/javascript" src="js/entities/base/genericEntities.js"></script>
+        <script type="text/javascript" src="js/entities/base/platformerEntities.js"></script>
+        <script type="text/javascript" src="js/entities/base/topDownEntities.js"></script>
+        <script type="text/javascript" src="js/entities/base/waterEntities.js"></script>
+        <script type="text/javascript" src="js/entities/base/particleEntities.js"></script>
+        <script type="text/javascript" src="js/entities/base/GUIEntities.js"></script>
+        <script type="text/javascript" src="js/entities/base/staticClasses.js"></script>
+        <script type="text/javascript" src="js/entities/base/rayCastEntities.js"></script>
+        <script type="text/javascript" src="js/entities/base/lightEntities.js"></script>
+        <script type="text/javascript" src="js/entities/entities.js"></script>
+        <script type="text/javascript" src="js/screens.js"></script>
+        <script type="text/javascript">
+            /* Bootstrap */
+            window.onReady(function onReady() {
+                game.onload();
+            });
+        </script>
+    </div>
+</body>
+</html>

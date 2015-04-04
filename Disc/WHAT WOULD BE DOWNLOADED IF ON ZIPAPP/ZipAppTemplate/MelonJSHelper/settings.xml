@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Settings>
+  <ResourceJSDirectory>C:\Users\Dolan\Documents\Visual Studio 2012\Projects\Game Template\Game Template\js\resources.js</ResourceJSDirectory>
+  <AssetDirectory>C:\Users\Dolan\Documents\Visual Studio 2012\Projects\Game Template\Game Template\assets</AssetDirectory>
+  <EntitiesDirectory>C:\Users\Dolan\Documents\Visual Studio 2012\Projects\Game Template\Game Template\js\entities</EntitiesDirectory>
+  <ScreensDirectory>C:\Users\Dolan\Documents\Visual Studio 2012\Projects\Game Template\Game Template\js\screens.js</ScreensDirectory>
+  <HomeMadeEntitiesDirectory />
+  <PluginsDirectory />
+</Settings>

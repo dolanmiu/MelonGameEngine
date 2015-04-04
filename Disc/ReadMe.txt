@@ -1,0 +1,1 @@
+If you have trouble running the games, just try and delete the contents of the bin folder. It normally solves problems
